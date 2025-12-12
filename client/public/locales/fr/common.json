@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "courses": "Cours",
+    "contact": "Contact",
+    "language": "Langue",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "english": "English",
+    "french": "Français",
+    "navigation": "Navigation",
+    "settings": "Paramètres"
+  },
+  "hero": {
+    "welcome": "Bienvenue à",
+    "academyName": "New Generation Academy",
+    "tagline": "Transformé pour la Communauté",
+    "learnMore": "En savoir plus",
+    "register": "Inscrivez votre enfant aujourd'hui",
+    "description": "New Generation Academy intègre les valeurs chrétiennes dans toutes les activités pour développer les étudiants intellectuellement, moralement et spirituellement."
+  },
+  "programs": {
+    "title": "Nos Programmes",
+    "subtitle": "Découvrez nos programmes éducatifs complets conçus pour nourrir les jeunes esprits et les préparer pour l'avenir.",
+    "nursery": {
+      "title": "Programme de Maternelle",
+      "description": "Le Programme de Maternelle favorise le développement holistique des enfants de 2 à 4 ans à travers des activités engageantes."
+    },
+    "primary": {
+      "title": "Programme Primaire",
+      "description": "Notre section primaire suit le programme international Cambridge, en mettant l'accent sur les mathématiques, les langues, le codage et la robotique."
+    },
+    "coding": {
+      "title": "Codage et Robotique",
+      "description": "Nos étudiants apprennent le codage et la robotique dès la première année, les préparant à la transformation numérique et à la technologie mondiale."
+    },
+    "secondary": {
+      "title": "Programme Secondaire",
+      "description": "Au niveau secondaire, les étudiants apprennent les matières de base et les options comme le codage et la robotique, les préparant pour des études supérieures ou une formation professionnelle."
+    },
+    "software": {
+      "title": "Programmation Logicielle et Systèmes Embarqués",
+      "description": "Nos étudiants apprennent la programmation logicielle et les systèmes embarqués, les préparant à la transformation numérique et à la technologie mondiale."
+    },
+    "readMore": "Lire la suite"
+  },
+  "about": {
+    "whoWeAre": "Qui nous sommes",
+    "whoWeAreDesc": "New Generation Academy, une école chrétienne accréditée avec le programme Cambridge, centre son éducation autour des principes christiques et offre le codage et la robotique dès la première année.",
+    "vision": "Vision",
+    "visionDesc": "New Generation Academy aspire à offrir constamment une éducation centrée sur le Christ qui se concentre sur l'unicité et les talents individuels à la gloire de Dieu.",
+    "mission": "Mission",
+    "missionDesc": "La mission de New Generation Academy est de servir et d'impacter la communauté en éduquant, nourrissant et soignant les enfants qui nous sont confiés.",
+    "coreValues": "Valeurs Fondamentales",
+    "coreValuesDesc": "Voici les valeurs qui façonnent notre école :",
+    "values": {
+      "godliness": "Piété",
+      "steadfastness": "Fermeté",
+      "innovation": "Innovation",
+      "patriotism": "Patriotisme",
+      "excellence": "Excellence Académique",
+      "servanthood": "Service",
+      "unity": "Unité dans la diversité"
+    }
+  },
+  "reasons": {
+    "title": "La Raison de Rejoindre New Generation Academy",
+    "international": {
+      "title": "Accréditation Internationale",
+      "description": "New Generation Academy est une corporation à but non lucratif d'utilité publique qui aide les organisations à démontrer la conformité et la compétence à leur public."
+    },
+    "christian": {
+      "title": "Vie Chrétienne",
+      "description": "New Generation Academy est une école chrétienne. Nous croyons que la meilleure éducation académique développe toute l'image de Dieu en nos enfants intellectuellement, moralement et spirituellement."
+    },
+    "studentLife": {
+      "title": "Vie Étudiante",
+      "description": "Ici, vous pouvez découvrir les diverses activités, événements et programmes que nous offrons pour améliorer les expériences éducatives de nos étudiants."
+    },
+    "facilities": {
+      "title": "Installations Scolaires",
+      "description": "Les installations scolaires sont essentielles à l'apprentissage. Nous maintenons nos bâtiments, terrains et équipements, y compris les salles de classe, le laboratoire informatique, la bibliothèque, la cuisine, la salle à manger et l'aire de jeux."
+    },
+    "register": "Inscrivez votre enfant aujourd'hui"
+  },
+  "blogs": {
+    "title": "Blogs Récents",
+    "blog1": {
+      "title": "Les délégués IOAI, UNESCO et MINICT visitent NGA",
+      "description": "Le 19 novembre, New Generation Academy a fièrement accueilli des délégués estimés de l'Olympiade Internationale en Intelligence Artificielle (IOAI), UNESCO et le Ministère ICT et Innovation du Rwanda..."
+    },
+    "blog2": {
+      "title": "Le Rwanda a inauguré un laboratoire de robotique dernier cri d'une valeur de 100 millions de Frw",
+      "description": "Le Rwanda a inauguré un laboratoire de robotique dernier cri à New Generation Academy, d'une valeur de 100 millions de francs rwandais. Cette installation vise à faire progresser les connaissances des étudiants en codage et..."
+    },
+    "blog3": {
+      "title": "Imbaraga u Rwanda rwashyize mu ikoranabuhanga zatangiye kubyara imbuto",
+      "description": "IKoranabuhanga ry'ubwenge buhangano. Robo (Robots) +Artificial Intelligence"
+    },
+    "moreDetails": "Plus de détails",
+    "viewMore": "Voir plus de blogs"
+  },
+  "partners": {
+    "title": "Nos Partenaires"
+  },
+  "footer": {
+    "questions": "Vous avez des questions ?",
+    "address": "KG 28 AV, Kigali, Rwanda",
+    "phone": "+250 789 552 671",
+    "email": "info@nga.ac.rw",
+    "quickLinks": "Liens Rapides",
+    "links": {
+      "home": "Accueil",
+      "programs": "Programmes",
+      "projects": "Projets Étudiants",
+      "teachers": "Enseignants",
+      "news": "Dans les Nouvelles",
+      "events": "Nos Événements",
+      "registration": "Inscription en Ligne"
+    },
+    "connect": "Connectez-vous avec nous",
+    "important": "Liens Importants",
+    "staffLogin": "Connexion Personnel / Étudiant",
+    "mailPortal": "Portail Mail du Personnel",
+    "copyright": "© 2025 New Generation Academy. Tous droits réservés."
+  }
+}

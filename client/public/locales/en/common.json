@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "courses": "Courses",
+    "contact": "Contact",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "english": "English",
+    "french": "Français",
+    "navigation": "Navigation",
+    "settings": "Settings"
+  },
+  "hero": {
+    "welcome": "Welcome to",
+    "academyName": "New Generation Academy",
+    "tagline": "Transformed for Community",
+    "learnMore": "Learn More",
+    "register": "Register Your Child Today",
+    "description": "New Generation Academy integrates Christian values into all activities to develop students intellectually, morally, and spiritually."
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Discover our comprehensive educational programs designed to nurture young minds and prepare them for the future.",
+    "nursery": {
+      "title": "Nursery Program",
+      "description": "Nursery Program fosters holistic development for 2–4 year olds through engaging activities."
+    },
+    "primary": {
+      "title": "Primary Program",
+      "description": "Our primary section follows the Cambridge international program, emphasizing math, languages, coding, and robotics."
+    },
+    "coding": {
+      "title": "Coding and Robotics",
+      "description": "Our students learn coding and robotics from grade 1, preparing them for digital transformation and global technology."
+    },
+    "secondary": {
+      "title": "Secondary Program",
+      "description": "At the secondary level, students learn core subjects and electives like coding and robotics, preparing them for further studies or vocational training."
+    },
+    "software": {
+      "title": "Software Programming and Embedded Systems",
+      "description": "Our students learn software programming and embedded systems, preparing them for digital transformation and global technology."
+    },
+    "readMore": "Read More"
+  },
+  "about": {
+    "whoWeAre": "Who we are",
+    "whoWeAreDesc": "New Generation Academy, an accredited Christian school with the Cambridge program, centers its education around Christ-like principles and offers coding and robotics from grade 1.",
+    "vision": "Vision",
+    "visionDesc": "New generation academy aspires to consistently offer Christ centered education that focuses on individual uniqueness and talents to the glory of God.",
+    "mission": "Mission",
+    "missionDesc": "New Generation Academy's mission is to serve and impact the community through educating, nurturing, and caring for children entrusted to us.",
+    "coreValues": "Core Values",
+    "coreValuesDesc": "These are the values that shape our school:",
+    "values": {
+      "godliness": "Godliness",
+      "steadfastness": "Steadfastness",
+      "innovation": "Innovation",
+      "patriotism": "Patriotism",
+      "excellence": "Academic Excellence",
+      "servanthood": "Servanthood",
+      "unity": "Unity in diversity"
+    }
+  },
+  "reasons": {
+    "title": "The Reason to Join New Generation Academy",
+    "international": {
+      "title": "International Accredited",
+      "description": "New Generation Academy is a nonprofit, public-benefit corporation that help organizations demonstrate compliance and competence to their public."
+    },
+    "christian": {
+      "title": "Christian life",
+      "description": "New Generation Academy is a Christian school. We believe that the best academic education develops the whole image of God in our children intellectually, morally and spiritually."
+    },
+    "studentLife": {
+      "title": "Student Life",
+      "description": "Here you can discover the various activities, events, and programs that we offer to enhance our students' educational experiences."
+    },
+    "facilities": {
+      "title": "School Facilities",
+      "description": "School facilities are essential to learning. We maintain our buildings, grounds, and amenities, including classrooms, a computer lab, library, kitchen, dining, and playground."
+    },
+    "register": "Register Your Child Today"
+  },
+  "blogs": {
+    "title": "Recent Blogs",
+    "blog1": {
+      "title": "IOAI, UNESCO and MINICT delegates visit NGA",
+      "description": "On November 19th, New Generation Academy proudly welcomed esteemed delegates from the International Olympiad in Artificial Intelligence (IOAI), UNESCO, and Rwanda's Ministry of ICT and Innova..."
+    },
+    "blog2": {
+      "title": "Rwanda has inaugurated a state-of-the-art robotics laboratory worth 100 million Frw",
+      "description": "Rwanda has inaugurated a state-of-the-art robotics laboratory at New Generation Academy, valued at 100 million Rwandan francs. This facility aims to advance students' knowledge in coding and..."
+    },
+    "blog3": {
+      "title": "Imbaraga u Rwanda rwashyize mu ikoranabuhanga zatangiye kubyara imbuto",
+      "description": "IKoranabuhanga ry'ubwenge buhangano. Robo (Robots) +Artificial Intelligence"
+    },
+    "moreDetails": "More Details",
+    "viewMore": "View More Blogs"
+  },
+  "partners": {
+    "title": "Our Partners"
+  },
+  "footer": {
+    "questions": "Have a Questions?",
+    "address": "KG 28 AV, Kigali, Rwanda",
+    "phone": "+250 789 552 671",
+    "email": "info@nga.ac.rw",
+    "quickLinks": "Quick Links",
+    "links": {
+      "home": "Home",
+      "programs": "Programs",
+      "projects": "Student Projects",
+      "teachers": "Teachers",
+      "news": "In the News",
+      "events": "Our Events",
+      "registration": "Online Registration"
+    },
+    "connect": "Connect With Us",
+    "important": "Important Links",
+    "staffLogin": "Staff / Student Login",
+    "mailPortal": "Staff Mail Portal",
+    "copyright": "© 2025 New Generation Academy. All rights reserved."
+  }
+}
