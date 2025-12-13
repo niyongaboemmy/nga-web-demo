@@ -22,7 +22,7 @@ function Programs() {
               <div className="hidden sm:block absolute left-4 sm:left-8 top-0 bottom-0 w-2 bg-gray-300 dark:bg-gray-600"></div>
               <div className="space-y-8 md:space-y-12">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg absolute top-4 left-4 sm:relative sm:top-auto sm:left-auto z-10 shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-primary-900 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg absolute top-4 left-4 sm:relative sm:top-auto sm:left-auto z-10 shadow-lg">
                     01
                   </div>
                   <div className="flex-1 relative overflow-hidden bg-white dark:bg-gray-800 h-full rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 ring-0 hover:ring-4 hover:ring-blue-500/20 transition-all duration-300 p-6 text-center w-full sm:max-w-sm sm:mx-auto">
@@ -77,15 +77,13 @@ function Programs() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
-                      Primary Program
+                      {t("programs.primary.title")}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Our primary section follows the Cambridge international
-                      program, emphasizing math, languages, coding, and
-                      robotics.
+                      {t("programs.primary.description")}
                     </p>
                     <button className="px-6 py-2 bg-gradient-to-r from-primary-900 to-primary-900 hover:from-primary-900 hover:to-primary-900 text-white rounded-full shadow-sm hover:shadow-md transition">
-                      Read More
+                      {t("programs.readMore")}
                     </button>
                   </div>
                 </div>
@@ -120,15 +118,13 @@ function Programs() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
-                      Coding and Robotics
+                      {t("programs.coding.title")}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Our students learn coding and robotics from grade 1,
-                      preparing them for digital transformation and global
-                      technology.
+                      {t("programs.coding.description")}
                     </p>
                     <button className="px-6 py-2 bg-gradient-to-r from-primary-900 to-primary-900 hover:from-primary-900 hover:to-primary-900 text-white rounded-full shadow-sm hover:shadow-md transition">
-                      Read More
+                      {t("programs.readMore")}
                     </button>
                   </div>
                 </div>
@@ -156,15 +152,13 @@ function Programs() {
                         </svg>
                       </div>
                       <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
-                        Secondary Program
+                        {t("programs.secondary.title")}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300 mb-4">
-                        At the secondary level, students learn core subjects and
-                        electives like coding and robotics, preparing them for
-                        further studies or vocational training.
+                        {t("programs.secondary.description")}
                       </p>
                       <button className="px-6 py-2 bg-gradient-to-r from-primary-900 to-primary-900 hover:from-primary-900 hover:to-primary-900 text-white rounded-full shadow-sm hover:shadow-md transition">
-                        Read More
+                        {t("programs.readMore")}
                       </button>
                     </div>
                   </div>
@@ -191,15 +185,13 @@ function Programs() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
-                      Software Programming and Embedded Systems
+                      {t("programs.software.title")}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Our students learn software programming and embedded
-                      systems, preparing them for digital transformation and
-                      global technology.
+                      {t("programs.software.description")}
                     </p>
                     <button className="px-6 py-2 bg-gradient-to-r from-primary-900 to-primary-900 hover:from-primary-900 hover:to-primary-900 text-white rounded-full shadow-sm hover:shadow-md transition">
-                      Read More
+                      {t("programs.readMore")}
                     </button>
                   </div>
                 </div>
