@@ -29,6 +29,8 @@ export default function Home() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string>("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,19 +39,42 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    // Load video src after component mounts to prevent blocking
+    const timer = setTimeout(() => {
+      setVideoSrc(slides[currentSlide].src);
+    }, 100); // small delay
+    return () => clearTimeout(timer);
+  }, [currentSlide, slides]);
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 font-sans">
       <main className="">
         <div className="min-h-[120vh] h-[1060px] relative w-full bg-gray-100 dark:bg-gray-800">
           <div className="absolute inset-0">
             {slides[currentSlide].type === "video" ? (
-              <video
-                src={slides[currentSlide].src}
-                autoPlay
-                muted={isMuted}
-                loop
-                className="w-full h-full object-cover"
-              />
+              <>
+                {videoSrc ? (
+                  <video
+                    src={videoSrc}
+                    autoPlay
+                    muted={isMuted}
+                    loop
+                    preload="none"
+                    onLoadedData={() => setVideoLoaded(true)}
+                    className="w-full h-full object-cover animate-zoom-in"
+                  />
+                ) : null}
+                {!videoLoaded && (
+                  <div className="absolute inset-0 bg-gray-200 shimmer flex items-center justify-center">
+                    <div className="flex space-x-4">
+                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce"></div>
+                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce animation-delay-300"></div>
+                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce animation-delay-500"></div>
+                    </div>
+                  </div>
+                )}
+              </>
             ) : (
               <Image
                 src={slides[currentSlide].src}
