@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=Cause:wght@100..900&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,3 +21,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* .cause-regular {
+  font-family: "Cause", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* 
+.cause-regular {
+  font-family: "Amarna", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */

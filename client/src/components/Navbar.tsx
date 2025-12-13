@@ -111,13 +111,13 @@ const Navbar = () => {
               alt="New Generation Academy Logo"
               width={50}
               height={50}
-              className="mr-2 rounded-full transition-all duration-300 w-auto h-[50px]"
+              className="mr-2 rounded-full transition-all duration-300 w-auto h-[46px]"
             />
             <div>
-              <h1 className="text-base font-bold text-gray-900 dark:text-white transition-colors duration-300">
+              <h1 className="text-lg font-extrabold text-gray-900 dark:text-white transition-colors duration-300">
                 New Generation Academy
               </h1>
-              <div className="text-gray-600 dark:text-gray-300 text-xs opacity-70">
+              <div className="text-gray-600 dark:text-gray-300 text-xs opacity-70 font-semibold -mt-0.5">
                 Transformed for Community
               </div>
             </div>
