@@ -66,11 +66,13 @@ export default function Home() {
                   />
                 ) : null}
                 {!videoLoaded && (
-                  <div className="absolute inset-0 bg-gray-200 shimmer flex items-center justify-center">
-                    <div className="flex space-x-4">
-                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce"></div>
-                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce animation-delay-300"></div>
-                      <div className="w-16 h-16 bg-gray-300 rounded-full animate-bounce animation-delay-500"></div>
+                  <div className="absolute inset-0 bg-primary-900 text-white flex items-center justify-center">
+                    <div className="text-center w-full flex flex-col items-center justify-center">
+                      <div className="flex space-x-4">
+                        <div className="w-6 h-6 bg-white rounded-full animate-bounce"></div>
+                        <div className="w-6 h-6 bg-white rounded-full animate-bounce animation-delay-300"></div>
+                        <div className="w-6 h-6 bg-white rounded-full animate-bounce animation-delay-500"></div>
+                      </div>
                     </div>
                   </div>
                 )}
