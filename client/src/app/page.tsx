@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 font-sans">
       <main className="">
-        <div className="min-h-[120vh] h-[1060px] relative w-full bg-gray-100 dark:bg-gray-800">
+        <div className="min-h-[120vh] h-[1060px] overflow-y-hidden relative w-full bg-gray-100 dark:bg-gray-800">
           <div className="absolute inset-0">
             {slides[currentSlide].type === "video" ? (
               <>
