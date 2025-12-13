@@ -63,7 +63,7 @@ export default function Home() {
           {slides[currentSlide].type === "video" && (
             <button
               onClick={() => setIsMuted(!isMuted)}
-              className="absolute top-[5rem] right-4 z-20 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity"
+              className="absolute top-[5rem] right-4 z-20 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 hover:scale-110 transition-all duration-300 animate-fade-in animation-delay-300"
             >
               {isMuted ? <MdVolumeOff size={24} /> : <MdVolumeUp size={24} />}
             </button>
@@ -78,7 +78,7 @@ export default function Home() {
                 className="w-full min-w-[900px] h-auto"
               />
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-bold">
-                <div className="absolute top-1/3 md:top-1/2 text-base sm:text-lg md:text-xl">
+                <div className="absolute top-1/3 md:top-1/2 text-base sm:text-lg md:text-xl animate-slide-in-up animation-delay-1000">
                   New Generation Academy integrates Christian values into all
                   activities <br />
                   to develop students intellectually, morally, and spiritually.
@@ -87,17 +87,17 @@ export default function Home() {
             </div>
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center">
-            <div className="text-xl md:text-4xl mb-6 md:mb-4 opacity-80">
+            <div className="text-xl md:text-4xl mb-6 md:mb-4 opacity-80 animate-slide-in-left">
               {t("hero.welcome")}
             </div>
-            <h3 className="text-5xl md:text-6xl font-bold mb-4 md:mb-0">
+            <h3 className="text-5xl md:text-6xl font-bold mb-4 md:mb-0 animate-slide-in-right animation-delay-300">
               {t("hero.academyName")}
             </h3>
-            <div className="text-2xl mt-4 opacity-80 mb-6 md:mb-0">
+            <div className="text-2xl mt-4 opacity-80 mb-6 md:mb-0 animate-fade-in animation-delay-500">
               {t("hero.tagline")}
             </div>
             <div className="mt-8 flex flex-col md:flex-row md:items-center w-full md:w-max gap-4 font-bold">
-              <button className="bg-dark-500 text-white px-6 py-3.5 rounded-full hover:bg-dark-700 transition-colors duration-300">
+              <button className="bg-dark-500 text-white px-6 py-3.5 rounded-full hover:bg-dark-700 hover:scale-105 transition-all duration-300 animate-bounce-in animation-delay-700">
                 {t("hero.learnMore")}
               </button>
               {/* <button className="border-2 border-white text-white bg-black/40 px-6 py-3.5 rounded-full hover:bg-dark-500 transition-colors duration-300">
