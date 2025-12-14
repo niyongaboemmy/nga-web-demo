@@ -22,7 +22,11 @@ export default function Home() {
 
   const slides: Array<
     { type: "image"; src: any } | { type: "video"; src: string }
-  > = [{ type: "video", src: "https://nga.ac.rw/videos/nga_video_1.mp4" }];
+  > = [
+    { type: "video", src: "./videos/video1.mp4" },
+    { type: "video", src: "./videos/video2.mp4" },
+    { type: "video", src: "./videos/video3.mp4" },
+  ];
 
   const fallbackImage = Hero1Image;
 
@@ -56,9 +60,9 @@ export default function Home() {
   }, [currentSlide, slides]);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 font-sans">
+    <div className="min-h-screen font-sans">
       <main className="">
-        <div className="min-h-[120vh] h-[1060px] overflow-y-hidden relative w-full bg-gray-100 dark:bg-gray-800">
+        <div className="min-h-[120vh] h-[1100px] overflow-y-hidden relative w-full bg-gray-100 dark:bg-gray-800">
           <div className="absolute inset-0">
             {slides[currentSlide].type === "video" && !videoError ? (
               <>
@@ -114,9 +118,9 @@ export default function Home() {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  New Generation Academy integrates Christian values into all
-                  activities <br />
-                  to develop students intellectually, morally, and spiritually.
+                  We equip students with future-ready digital skills through
+                  hands-on learning, <br />
+                  modern labs, and strong industry partnerships.
                 </div>
               </div>
             </div>
@@ -136,13 +140,13 @@ export default function Home() {
               {t("hero.academyName")}
             </h3>
             <div
-              className="text-2xl mt-4 opacity-80 mb-6 md:mb-0"
+              className="hidden sm:block text-base md:text-2xl mt-4 opacity-80 mb-6 md:mb-0"
               data-aos="fade-in"
               data-aos-delay="500"
             >
               {t("hero.tagline")}
             </div>
-            <div className="mt-8 flex flex-col md:flex-row md:items-center w-full md:w-max gap-4 font-bold">
+            <div className="mt-8 flex flex-row items-center w-max gap-4 font-bold">
               <button
                 className="bg-dark-500 text-white px-6 py-3.5 rounded-full hover:bg-dark-700 hover:scale-105 transition-all duration-300"
                 data-aos="zoom-in"
@@ -150,35 +154,38 @@ export default function Home() {
               >
                 {t("hero.learnMore")}
               </button>
-              {/* <button className="border-2 border-white text-white bg-black/40 px-6 py-3.5 rounded-full hover:bg-dark-500 transition-colors duration-300">
+              <button className="hidden sm:block border-2 border-white text-white bg-black/40 px-6 py-3.5 rounded-full hover:bg-dark-500 transition-colors duration-300">
                 {t("hero.register")}
-              </button> */}
+              </button>
+              <button className="hidden sm:block border-2 border-white text-white bg-black/40 px-6 py-3.5 rounded-full hover:bg-dark-500 transition-colors duration-300">
+                Explore Our Programs
+              </button>
             </div>
           </div>
         </div>
         <div className="min-h-screen">
           {/* Programs section */}
-          <div data-aos="fade-up">
+          <div data-aos="fade-in">
             <Programs />
           </div>
           {/* About section */}
-          <div data-aos="fade-up" data-aos-delay="200">
+          <div>
             <AboutComponent />
           </div>
           {/* Reason to join section */}
-          <div data-aos="fade-up" data-aos-delay="400">
+          <div>
             <ReasonToJoin />
           </div>
           {/* Recent Blogs section */}
-          <div data-aos="fade-up" data-aos-delay="600">
+          <div>
             <RecentBlogs />
           </div>
           {/* Our Partners section */}
-          <div data-aos="fade-up" data-aos-delay="800">
+          <div>
             <OurPartners />
           </div>
           {/* Ads to register section */}
-          <div data-aos="fade-up" data-aos-delay="1000">
+          <div>
             <AdsToRegister />
           </div>
         </div>

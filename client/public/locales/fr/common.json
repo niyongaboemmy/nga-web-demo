@@ -15,75 +15,69 @@
   },
   "hero": {
     "welcome": "Bienvenue à",
-    "academyName": "New Generation Academy",
-    "tagline": "Transformé pour la Communauté",
-    "learnMore": "En savoir plus",
-    "register": "Inscrivez votre enfant aujourd'hui",
-    "description": "New Generation Academy intègre les valeurs chrétiennes dans toutes les activités pour développer les étudiants intellectuellement, moralement et spirituellement."
+    "academyName": "NGA-Coding Academy",
+    "tagline": "Rwanda’s Private Centre of Excellence in Software Programming, Embedded Systems & Robotics",
+    "learnMore": "Postuler maintenant",
+    "register": "Partenaire avec nous",
+    "description": "We equip students with future-ready digital skills through hands-on learning, modern labs, and strong industry partnerships."
   },
   "programs": {
-    "title": "Nos Programmes",
-    "subtitle": "Découvrez nos programmes éducatifs complets conçus pour nourrir les jeunes esprits et les préparer pour l'avenir.",
-    "nursery": {
-      "title": "Programme de Maternelle",
-      "description": "Le Programme de Maternelle favorise le développement holistique des enfants de 2 à 4 ans à travers des activités engageantes."
-    },
-    "primary": {
-      "title": "Programme Primaire",
-      "description": "Notre section primaire suit le programme international Cambridge, en mettant l'accent sur les mathématiques, les langues, le codage et la robotique."
-    },
-    "coding": {
-      "title": "Codage et Robotique",
-      "description": "Nos étudiants apprennent le codage et la robotique dès la première année, les préparant à la transformation numérique et à la technologie mondiale."
-    },
-    "secondary": {
-      "title": "Programme Secondaire",
-      "description": "Au niveau secondaire, les étudiants apprennent les matières de base et les options comme le codage et la robotique, les préparant pour des études supérieures ou une formation professionnelle."
-    },
+    "title": "Programmes que nous offrons",
+    "subtitle": "Aperçu du programme intégré: Programmation logicielle, systèmes embarqués et robotique. Notre programme phare intègre la programmation logicielle, les systèmes embarqués et la robotique dans un programme complet et aligné sur l'industrie. Les étudiants acquièrent à la fois les compétences logicielles et matérielles nécessaires pour construire des systèmes numériques et intelligents réels.",
     "software": {
-      "title": "Programmation Logicielle et Systèmes Embarqués",
-      "description": "Nos étudiants apprennent la programmation logicielle et les systèmes embarqués, les préparant à la transformation numérique et à la technologie mondiale."
+      "title": "Fondements du développement logiciel",
+      "description": "Les étudiants développent de solides compétences en programmation et en résolution de problèmes grâce à des modules tels que: Développement d'applications web et mobiles, principes de conception UI/UX, gestion des bases de données et des données, bases du cloud et déploiement, outils et pratiques d'ingénierie logicielle standard de l'industrie."
+    },
+    "embedded": {
+      "title": "Systèmes embarqués et IoT",
+      "description": "Les apprenants acquièrent une expérience pratique en travaillant avec: Microcontrôleurs et microprocesseurs, systèmes Internet des objets (IoT), fondamentaux de l'électronique, intégration des capteurs et conception de circuits, automatisation et systèmes en temps réel."
+    },
+    "robotics": {
+      "title": "Robotique et automatisation intelligente",
+      "description": "Le programme combine les compétences mécaniques, électroniques et de programmation pour enseigner: Fondements de la robotique et conception, actionneurs, capteurs et systèmes de contrôle, prototypage mécanique, prise de décision algorithmique et autonome, développement de systèmes intelligents et automatisés."
     },
     "readMore": "Lire la suite"
   },
   "about": {
     "whoWeAre": "Qui nous sommes",
-    "whoWeAreDesc": "New Generation Academy, une école chrétienne accréditée avec le programme Cambridge, centre son éducation autour des principes christiques et offre le codage et la robotique dès la première année.",
+    "whoWeAreDesc": "NGA-Coding Academy est un lycée privé et centre d'excellence émergent dédié au développement de talents exceptionnels en programmation logicielle, systèmes embarqués et robotique. Notre mission est de fournir une formation de qualité et basée sur les compétences qui prépare les étudiants à prospérer dans l'économie numérique croissante du Rwanda.",
     "vision": "Vision",
-    "visionDesc": "New Generation Academy aspire à offrir constamment une éducation centrée sur le Christ qui se concentre sur l'unicité et les talents individuels à la gloire de Dieu.",
+    "visionDesc": "Façonner des carrières prêtes pour l'avenir en offrant l'excellence en ingénierie logicielle, systèmes embarqués et robotique.",
     "mission": "Mission",
-    "missionDesc": "La mission de New Generation Academy est de servir et d'impacter la communauté en éduquant, nourrissant et soignant les enfants qui nous sont confiés.",
-    "coreValues": "Valeurs Fondamentales",
-    "coreValuesDesc": "Voici les valeurs qui façonnent notre école :",
+    "missionDesc": "Fournir une formation de qualité et basée sur les compétences en programmation logicielle, systèmes embarqués et robotique; favoriser l'innovation grâce à des programmes alignés sur l'industrie; et développer des diplômés entrepreneurs et prêts à l'emploi qui respectent les valeurs chrétiennes tout en contribuant à la transformation numérique du Rwanda et à l'écosystème technologique mondial.",
+    "coreValues": "Piliers du Centre d'Excellence",
+    "coreValuesDesc": "Nos piliers incluent:",
     "values": {
-      "godliness": "Piété",
-      "steadfastness": "Fermeté",
-      "innovation": "Innovation",
-      "patriotism": "Patriotisme",
-      "excellence": "Excellence Académique",
-      "servanthood": "Service",
-      "unity": "Unité dans la diversité"
+      "specialized": "Programme spécialisé et formation",
+      "modern": "Technologie et infrastructure modernes",
+      "partnerships": "Partenariats industriels et académiques",
+      "community": "Communauté et alignement national",
+      "evidence": "Résultats des diplômés basés sur des preuves"
     }
   },
   "reasons": {
-    "title": "La Raison de Rejoindre New Generation Academy",
-    "international": {
-      "title": "Accréditation Internationale",
-      "description": "New Generation Academy est une corporation à but non lucratif d'utilité publique qui aide les organisations à démontrer la conformité et la compétence à leur public."
-    },
-    "christian": {
-      "title": "Vie Chrétienne",
-      "description": "New Generation Academy est une école chrétienne. Nous croyons que la meilleure éducation académique développe toute l'image de Dieu en nos enfants intellectuellement, moralement et spirituellement."
-    },
-    "studentLife": {
-      "title": "Vie Étudiante",
-      "description": "Ici, vous pouvez découvrir les diverses activités, événements et programmes que nous offrons pour améliorer les expériences éducatives de nos étudiants."
+    "title": "Pourquoi choisir CNA?",
+    "curriculum": {
+      "title": "Programme aligné sur l'industrie",
+      "description": "Mis à jour constamment pour répondre aux besoins du secteur privé et aux tendances mondiales."
     },
     "facilities": {
-      "title": "Installations Scolaires",
-      "description": "Les installations scolaires sont essentielles à l'apprentissage. Nous maintenons nos bâtiments, terrains et équipements, y compris les salles de classe, le laboratoire informatique, la bibliothèque, la cuisine, la salle à manger et l'aire de jeux."
+      "title": "Installations d'apprentissage modernes",
+      "description": "Laboratoires de robotique et de systèmes embarqués de pointe, salles de classe numériques et espaces de création."
     },
-    "register": "Inscrivez votre enfant aujourd'hui"
+    "approach": {
+      "title": "Approche pratique basée sur les projets",
+      "description": "Les étudiants apprennent en construisant des systèmes réels, des prototypes et des applications logicielles."
+    },
+    "partnerships": {
+      "title": "Solides partenariats industriels et académiques",
+      "description": "Fournissant des stages, des mentorats, des attaches industrielles et des opportunités de recherche."
+    },
+    "pathways": {
+      "title": "Voies vers l'emploi et l'entrepreneuriat",
+      "description": "Nos diplômés poursuivent des carrières en développement logiciel, ingénierie robotique, IoT, et plus."
+    },
+    "register": "Postuler maintenant"
   },
   "blogs": {
     "title": "Blogs Récents",
@@ -124,6 +118,6 @@
     "important": "Liens Importants",
     "staffLogin": "Connexion Personnel / Étudiant",
     "mailPortal": "Portail Mail du Personnel",
-    "copyright": "© 2025 New Generation Academy. Tous droits réservés."
+    "copyright": "© 2025 NGA-Coding Academy. Tous droits réservés."
   }
 }

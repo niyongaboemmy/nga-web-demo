@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "New Generation Academy",
-  description: "New Generation Academy",
+  title: "NGA-Coding Academy",
+  description:
+    "Rwanda’s Private Centre of Excellence in Software Programming, Embedded Systems & Robotics",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 dark:bg-gray-950 cause-regular`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black/10 dark:bg-gray-950 cause-regular`}
       >
         <I18nProvider>
           <Navbar />

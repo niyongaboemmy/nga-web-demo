@@ -25,19 +25,19 @@ const Footer = () => {
               {/* Address */}
               <div className="flex items-start gap-3">
                 <MdLocationOn className="w-[18px] h-[18px] flex-shrink-0 mt-0.5 text-[#44C0FF]" />
-                <p className="text-[13px]">KG 28 AV, Kigali, Rwanda</p>
+                <p className="text-[13px]">KG 643 St, Kimihurura, Rugando</p>
               </div>
 
               {/* Phone */}
               <div className="flex items-center gap-3">
                 <MdPhone className="w-[18px] h-[18px] flex-shrink-0 text-[#44C0FF]" />
-                <p className="text-[13px]">+250 789 552 671</p>
+                <p className="text-[13px]">+250…</p>
               </div>
 
               {/* Email */}
               <div className="flex items-center gap-3">
                 <MdEmail className="w-[16px] h-[16px] flex-shrink-0 text-[#44C0FF]" />
-                <p className="text-[13px]">info@nga.ac.rw</p>
+                <p className="text-[13px]">ngacodingacademy@nga.ac.rw</p>
               </div>
             </div>
           </div>

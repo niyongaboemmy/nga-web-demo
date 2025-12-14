@@ -15,75 +15,69 @@
   },
   "hero": {
     "welcome": "Welcome to",
-    "academyName": "New Generation Academy",
-    "tagline": "Transformed for Community",
-    "learnMore": "Learn More",
-    "register": "Register Your Child Today",
-    "description": "New Generation Academy integrates Christian values into all activities to develop students intellectually, morally, and spiritually."
+    "academyName": "NGA-Coding Academy",
+    "tagline": "Rwanda’s Private Centre of Excellence in Software Programming, Embedded Systems & Robotics",
+    "learnMore": "Apply Now",
+    "register": "Partner With Us",
+    "description": "We equip students with future-ready digital skills through hands-on learning, modern labs, and strong industry partnerships."
   },
   "programs": {
-    "title": "Our Programs",
-    "subtitle": "Discover our comprehensive educational programs designed to nurture young minds and prepare them for the future.",
-    "nursery": {
-      "title": "Nursery Program",
-      "description": "Nursery Program fosters holistic development for 2–4 year olds through engaging activities."
-    },
-    "primary": {
-      "title": "Primary Program",
-      "description": "Our primary section follows the Cambridge international program, emphasizing math, languages, coding, and robotics."
-    },
-    "coding": {
-      "title": "Coding and Robotics",
-      "description": "Our students learn coding and robotics from grade 1, preparing them for digital transformation and global technology."
-    },
-    "secondary": {
-      "title": "Secondary Program",
-      "description": "At the secondary level, students learn core subjects and electives like coding and robotics, preparing them for further studies or vocational training."
-    },
+    "title": "Programs We Offer",
+    "subtitle": "Integrated Program Overview: Software Programming, Embedded Systems & Robotics. Our flagship program integrates Software Programming, Embedded Systems, and Robotics into a single, comprehensive, industry-aligned curriculum. Students gain both the software and hardware competencies required to build real-world digital and intelligent systems.",
     "software": {
-      "title": "Software Programming and Embedded Systems",
-      "description": "Our students learn software programming and embedded systems, preparing them for digital transformation and global technology."
+      "title": "Software Development Foundations",
+      "description": "Students build strong programming and problem-solving skills through modules such as: Web and mobile application development, UI/UX design principles, Databases and data management, Cloud foundations and deployment basics, Industry-standard tools and software engineering practices."
+    },
+    "embedded": {
+      "title": "Embedded Systems & IoT",
+      "description": "Learners gain hands-on experience working with: Microcontrollers and microprocessors, Internet of Things (IoT) systems, Electronics fundamentals, Sensor integration and circuit design, Automation and real-time systems."
+    },
+    "robotics": {
+      "title": "Robotics & Intelligent Automation",
+      "description": "The program blends mechanical, electronic, and programming skills to teach: Robotics foundations and design, Actuators, sensors, and control systems, Mechanical prototyping, Algorithmic and autonomous decision-making, Intelligent and automated system development."
     },
     "readMore": "Read More"
   },
   "about": {
-    "whoWeAre": "Who we are",
-    "whoWeAreDesc": "New Generation Academy, an accredited Christian school with the Cambridge program, centers its education around Christ-like principles and offers coding and robotics from grade 1.",
+    "whoWeAre": "Who We Are",
+    "whoWeAreDesc": "NGA-Coding Academy is a private high school and emerging Centre of Excellence dedicated to developing exceptional talent in Software Programming, Embedded Systems, and Robotics. Our mission is to provide high-quality, competency-based training that prepares students to thrive in Rwanda’s growing digital economy.",
     "vision": "Vision",
-    "visionDesc": "New generation academy aspires to consistently offer Christ centered education that focuses on individual uniqueness and talents to the glory of God.",
+    "visionDesc": "To shape future-ready careers by delivering excellence in software engineering, embedded systems, and robotics.",
     "mission": "Mission",
-    "missionDesc": "New Generation Academy's mission is to serve and impact the community through educating, nurturing, and caring for children entrusted to us.",
-    "coreValues": "Core Values",
-    "coreValuesDesc": "These are the values that shape our school:",
+    "missionDesc": "To provide high-quality, competency-based training in Software Programming, Embedded Systems, and Robotics; to nurture innovation through industry-aligned curricula; and to develop entrepreneurial, job-ready graduates who uphold Christian values while contributing to Rwanda’s digital transformation and the global tech ecosystem.",
+    "coreValues": "Centre of Excellence Pillars",
+    "coreValuesDesc": "Our pillars include:",
     "values": {
-      "godliness": "Godliness",
-      "steadfastness": "Steadfastness",
-      "innovation": "Innovation",
-      "patriotism": "Patriotism",
-      "excellence": "Academic Excellence",
-      "servanthood": "Servanthood",
-      "unity": "Unity in diversity"
+      "specialized": "Specialized Curriculum and Training",
+      "modern": "Modern Technology & Infrastructure",
+      "partnerships": "Industry & Academic Partnerships",
+      "community": "Community & National Alignment",
+      "evidence": "Evidence-Based Graduate Outcomes"
     }
   },
   "reasons": {
-    "title": "The Reason to Join New Generation Academy",
-    "international": {
-      "title": "International Accredited",
-      "description": "New Generation Academy is a nonprofit, public-benefit corporation that help organizations demonstrate compliance and competence to their public."
-    },
-    "christian": {
-      "title": "Christian life",
-      "description": "New Generation Academy is a Christian school. We believe that the best academic education develops the whole image of God in our children intellectually, morally and spiritually."
-    },
-    "studentLife": {
-      "title": "Student Life",
-      "description": "Here you can discover the various activities, events, and programs that we offer to enhance our students' educational experiences."
+    "title": "Why Choose CNA?",
+    "curriculum": {
+      "title": "Industry-Aligned Curriculum",
+      "description": "Constantly updated to match private-sector needs and global trends."
     },
     "facilities": {
-      "title": "School Facilities",
-      "description": "School facilities are essential to learning. We maintain our buildings, grounds, and amenities, including classrooms, a computer lab, library, kitchen, dining, and playground."
+      "title": "Modern Learning Facilities",
+      "description": "State-of-the-art robotics and embedded systems labs, digital classrooms, and maker spaces."
     },
-    "register": "Register Your Child Today"
+    "approach": {
+      "title": "Hands-On, Project-Based Approach",
+      "description": "Students learn by building real systems, prototypes, and software applications."
+    },
+    "partnerships": {
+      "title": "Strong Industry & Academic Partnerships",
+      "description": "Providing internships, mentorships, industrial attachments, and research opportunities."
+    },
+    "pathways": {
+      "title": "Pathways to Employment & Entrepreneurship",
+      "description": "Our graduates pursue careers in software development, robotics engineering, IoT, and more."
+    },
+    "register": "Apply Now"
   },
   "blogs": {
     "title": "Recent Blogs",
@@ -124,6 +118,6 @@
     "important": "Important Links",
     "staffLogin": "Staff / Student Login",
     "mailPortal": "Staff Mail Portal",
-    "copyright": "© 2025 New Generation Academy. All rights reserved."
+    "copyright": "© 2025 NGA-Coding Academy. All rights reserved."
   }
 }

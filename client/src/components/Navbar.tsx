@@ -20,6 +20,7 @@ const Navbar = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,16 @@ const Navbar = () => {
     updateActiveLink();
     window.addEventListener("hashchange", updateActiveLink);
 
-    return () => window.removeEventListener("hashchange", updateActiveLink);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > window.innerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("hashchange", updateActiveLink);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Listen for i18n language changes and update component state
@@ -102,23 +112,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md border-b border-gray-200 dark:border-gray-900/0 z-50">
+    <nav
+      className={`fixed top-0 w-full ${
+        isScrolled && !isDark
+          ? "bg-dark-500 border-none border-white/20"
+          : "bg-dark-700 dark:bg-transparent border-none border-gray-800/50"
+      } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Image
               src="/apple-touch-icon.png"
-              alt="New Generation Academy Logo"
+              alt="NGA-Coding Academy Logo"
               width={50}
               height={50}
               className="mr-2 rounded-full transition-all duration-300 w-auto h-[46px]"
             />
             <div>
-              <h1 className="text-lg font-extrabold text-gray-900 dark:text-white transition-colors duration-300">
-                New Generation Academy
+              <h1 className="text-lg font-extrabold text-white dark:text-white transition-colors duration-300">
+                NGA-Coding Academy
               </h1>
-              <div className="text-gray-600 dark:text-gray-300 text-xs opacity-70 font-semibold -mt-0.5">
-                Transformed for Community
+              <div className="text-blue-100 dark:text-gray-300 text-xs opacity-70 font-normal -mt-0.5">
+                Building Rwanda’s Next Generation of Developers
               </div>
             </div>
           </div>
@@ -127,8 +143,8 @@ const Navbar = () => {
               href="#home"
               className={`transition-all duration-300 px-4 py-2 rounded-full ${
                 activeLink === "home"
-                  ? "bg-primary-100 text-primary-950 dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-900"
+                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
               }`}
             >
               {t("nav.home")}
@@ -137,8 +153,8 @@ const Navbar = () => {
               href="#about"
               className={`transition-all duration-300 px-4 py-2 rounded-full ${
                 activeLink === "about"
-                  ? "bg-primary-100 text-primary-950 dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-900"
+                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
               }`}
             >
               {t("nav.about")}
@@ -147,8 +163,8 @@ const Navbar = () => {
               href="#courses"
               className={`transition-all duration-300 px-4 py-2 rounded-full ${
                 activeLink === "courses"
-                  ? "bg-primary-100 text-primary-950 dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-900"
+                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
               }`}
             >
               {t("nav.courses")}
@@ -157,8 +173,8 @@ const Navbar = () => {
               href="#contact"
               className={`transition-all duration-300 px-4 py-2 rounded-full ${
                 activeLink === "contact"
-                  ? "bg-primary-100 text-primary-950 dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-900"
+                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
               }`}
             >
               {t("nav.contact")}
@@ -168,7 +184,7 @@ const Navbar = () => {
             <div className="hidden md:block relative">
               <button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center bg-gray-200 dark:bg-gray-100/10 text-gray-900 dark:text-gray-100 px-4 pr-6 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-100/20 transition-all duration-300 text-sm hover:scale-105"
+                className="flex items-center bg-primary-500/10 dark:bg-gray-100/10 text-white dark:text-gray-100 px-4 pr-6 py-2 rounded-full hover:bg-primary-500/20 dark:hover:bg-gray-100/20 transition-all duration-300 text-sm hover:scale-105"
               >
                 <div className="font-normal opacity-80">
                   {language === "en" ? t("nav.english") : t("nav.french")}
@@ -221,7 +237,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={toggleTheme}
-              className="hidden md:block p-2 rounded-full bg-gray-200 dark:bg-gray-100/10 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-100/30 hover:scale-110 hover:rotate-180 transition-all duration-300"
+              className="hidden md:block p-2 rounded-full bg-primary-500/10 text-white dark:bg-gray-100/10 dark:text-gray-100 hover:bg-primary-500/20 dark:hover:bg-gray-100/30 hover:scale-110 hover:rotate-180 transition-all duration-300"
             >
               {isDark ? <FiSun /> : <FiMoon />}
             </button>
@@ -234,12 +250,12 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800/95 backdrop-blur-md border-l border-gray-200 dark:border-gray-700 shadow-lg transform ${
+          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 backdrop-blur-md border-l border-gray-200 dark:border-gray-700 shadow-lg transform ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 z-50`}
           ref={mobileMenuRef}
         >
-          <div className="px-6 py-6 space-y-4">
+          <div className="px-6 py-6 space-y-4 bg-white dark:bg-gray-900 w-full">
             <div className="space-y-2">
               <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                 {t("nav.navigation")}
