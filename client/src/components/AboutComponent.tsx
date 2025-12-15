@@ -11,11 +11,7 @@ const AboutComponent = () => {
     <div className="bg-primary-100 dark:bg-gray-900 py-12 md:py-16 pb-8 lg:py-20 md:pb-8 lg:pb-8 text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-max">
         <div className="grid grid-cols-12 gap-4 w-full h-max">
-          <div
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <div className="mb-10 md:mb-12">
               <div className="flex flex-row items-center gap-3 mb-2">
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
@@ -35,10 +31,7 @@ const AboutComponent = () => {
               <div className="opacity-60">{t("about.visionDesc")}</div>
             </div>
           </div>
-          <div
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            data-aos="fade-up"
-          >
+          <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <div className="mb-12 md:mb-16">
               <div className="flex flex-row items-center gap-3 mb-2">
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
@@ -94,11 +87,7 @@ const AboutComponent = () => {
               </div>
             </div>
           </div>
-          <div
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <Image
               src={AboutImage}
               alt=""

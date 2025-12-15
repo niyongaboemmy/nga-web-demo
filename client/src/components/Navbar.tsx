@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -49,15 +49,15 @@ const Navbar = () => {
     updateActiveLink();
     window.addEventListener("hashchange", updateActiveLink);
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight);
-    };
+    // const handleScroll = () => {
+    //   setIsScrolled(window.scrollY > window.innerHeight);
+    // };
 
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("hashchange", updateActiveLink);
-      window.removeEventListener("scroll", handleScroll);
+      // window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -114,7 +114,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 w-full ${
-        isScrolled && !isDark
+        // isScrolled &&
+        !isDark
           ? "bg-dark-500 border-none border-white/20"
           : "bg-dark-700 dark:bg-transparent border-none border-gray-800/50"
       } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}

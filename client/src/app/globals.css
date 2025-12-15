@@ -99,6 +99,20 @@ body {
   }
 }
 
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes zoomIn {
   0% {
     transform: scale(1);
@@ -131,6 +145,14 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient-ring {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+  background-size: 400% 400%;
+  animation: rotateGradient 3s ease infinite;
+  padding: 2px;
+  border-radius: 1.5rem;
 }
 
 .animate-zoom-in {
