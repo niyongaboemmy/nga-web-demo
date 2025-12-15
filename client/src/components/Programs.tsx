@@ -20,8 +20,8 @@ function Programs() {
             </div>
             <div className="w-full px-3 py-8 md:p-8 md:px-3 mt-8">
               <div className="relative">
-                <div className="hidden sm:block absolute left-0 sm:-left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary-500 via-primary-500 to-primary-500 rounded-full"></div>
-                <div className="space-y-8 md:space-y-6 sm:pl-5">
+                {/* <div className="hidden sm:block absolute left-0 sm:-left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary-500 via-primary-500 to-primary-500 rounded-full"></div> */}
+                <div className="space-y-8 md:space-y-6">
                   <div className="flex items-start">
                     <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 min-h-[400px] rounded-[2.5rem] hover:-translate-y-3 ring-primary-200/50 hover:ring-primary-400/50 transition-all duration-500 p-10 w-full backdrop-blur-sm">
                       <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-400/20 rounded-full blur-xl"></div>

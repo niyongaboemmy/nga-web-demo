@@ -33,7 +33,9 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoSrc, setVideoSrc] = useState<string>("");
+  const [currentVideoSrc, setCurrentVideoSrc] = useState(slides[0].src);
+  const [nextVideoSrc, setNextVideoSrc] = useState<string | null>(null);
+  const [showNext, setShowNext] = useState(false);
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
@@ -52,34 +54,64 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Load video src after component mounts to prevent blocking
-    const timer = setTimeout(() => {
-      setVideoSrc(slides[currentSlide].src);
-    }, 100); // small delay
-    return () => clearTimeout(timer);
-  }, [currentSlide, slides]);
+    setNextVideoSrc(slides[currentSlide].src);
+  }, [currentSlide]);
 
   return (
     <div className="min-h-screen font-sans">
       <main className="">
-        <div className="min-h-[120vh] h-[1100px] overflow-y-hidden relative w-full bg-gray-100 dark:bg-gray-800">
+        <div
+          className="min-h-[120vh] h-[1100px] overflow-y-hidden relative w-full bg-gray-100 dark:bg-gray-800 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url('https://nga.ac.rw/uploads/why_partner/why_partner_1765368541.jpg')",
+          }}
+        >
           <div className="absolute inset-0">
             {slides[currentSlide].type === "video" && !videoError ? (
               <>
-                {videoSrc ? (
+                <video
+                  src={currentVideoSrc}
+                  autoPlay
+                  muted={isMuted}
+                  loop
+                  preload="none"
+                  onLoadedData={() => setVideoLoaded(true)}
+                  onError={() => setVideoError(true)}
+                  className={`w-full h-full object-cover animate-zoom-in ${
+                    showNext ? "opacity-0" : "opacity-100"
+                  } transition-opacity duration-1000`}
+                />
+                {nextVideoSrc && (
                   <video
-                    src={videoSrc}
+                    src={nextVideoSrc}
                     autoPlay
                     muted={isMuted}
                     loop
                     preload="none"
-                    onLoadedData={() => setVideoLoaded(true)}
+                    onLoadedData={() => {
+                      setVideoLoaded(true);
+                      setShowNext(true);
+                      setTimeout(() => {
+                        setCurrentVideoSrc(nextVideoSrc);
+                        setNextVideoSrc(null);
+                        setShowNext(false);
+                      }, 1000);
+                    }}
                     onError={() => setVideoError(true)}
-                    className="w-full h-full object-cover animate-zoom-in"
+                    className={`absolute inset-0 w-full h-full object-cover animate-zoom-in ${
+                      showNext ? "opacity-100" : "opacity-0"
+                    } transition-opacity duration-1000`}
                   />
-                ) : null}
+                )}
                 {!videoLoaded && (
-                  <div className="absolute inset-0 bg-primary-900 text-white flex items-center justify-center">
+                  <div
+                    className="absolute inset-0 bg-gray-950 text-white flex items-center justify-center bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage:
+                        "url('https://nga.ac.rw/uploads/why_partner/why_partner_1765368541.jpg')",
+                    }}
+                  >
                     <div className="text-center w-full flex flex-col items-center justify-center">
                       <div className="flex space-x-4">
                         <div className="w-6 h-6 bg-white rounded-full animate-bounce"></div>
