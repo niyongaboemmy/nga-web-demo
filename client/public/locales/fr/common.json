@@ -55,6 +55,83 @@
       "evidence": "Résultats des diplômés basés sur des preuves"
     }
   },
+  "aboutPage": {
+    "hero": {
+      "badge": "À propos de NGA Coding Academy",
+      "title": "Autonomiser la",
+      "highlight": "Prochaine Génération",
+      "suffix": "de Leaders Technologiques",
+      "description": "NGA-Coding Academy est un lycée privé et un centre d'excellence émergent dédié au développement de talents exceptionnels en programmation logicielle, systèmes embarqués et robotique.",
+      "start": "Commencez Aujourd'hui",
+      "explore": "Explorer les Programmes"
+    },
+    "stats": {
+      "badge": "Notre Impact",
+      "title": "Faire la Différence dans l'Éducation Technologique",
+      "description": "Notre engagement envers l'excellence se reflète dans nos réalisations et le succès de nos étudiants",
+      "students": "Étudiants Formés",
+      "success": "Taux de Réussite",
+      "partners": "Organisations Partenaires",
+      "years": "Années d'Excellence"
+    },
+    "mission": {
+      "badge": "Notre Mission",
+      "title": "Servir la",
+      "highlight": "Communauté",
+      "suffix": "Par l'Éducation",
+      "description": "La mission de New Generation Academy est de servir et d'avoir un impact sur la communauté en éduquant, en nourrissant et en prenant soin des enfants qui nous sont confiés. Nous sommes dédiés au développement de talents exceptionnels qui façonneront l'avenir de la technologie.",
+      "list": {
+        "educating": "Éduquer & Nourrir",
+        "community": "Impact Communautaire",
+        "talent": "Talent Exceptionnel"
+      },
+      "floating_title": "Taux de Réussite des Étudiants"
+    },
+    "vision": {
+      "badge": "Notre Vision",
+      "title": "Éducation",
+      "highlight": "Centrée sur le Christ",
+      "suffix": "pour la Croissance Individuelle",
+      "description": "New Generation Academy aspire à offrir constamment une éducation centrée sur le Christ qui se concentre sur l'unicité et les talents individuels pour la gloire de Dieu.",
+      "box1": {
+        "title": "Unicité",
+        "desc": "Se concentrer sur les talents individuels."
+      },
+      "box2": {
+        "title": "Gloire de Dieu",
+        "desc": "L'éducation avec un but plus élevé."
+      }
+    },
+    "values": {
+      "badge": "Nos Valuers",
+      "title": "Notre But & Nos Valeurs",
+      "description": "Nous préparons des diplômés qualifiés, éthiques et prêts à l'emploi qui incarnent les valeurs chrétiennes alors qu'ils innovent dans le paysage technologique mondial.",
+      "items": {
+        "innovation": {
+          "title": "Innovation & Compétences",
+          "desc": "Préparer des diplômés qualifiés prêts à innover dans le paysage technologique national et mondial."
+        },
+        "ethical": {
+          "title": "Leadership Éthique",
+          "desc": "Façonner des professionnels qui incarnent un fort caractère moral et une responsabilité éthique."
+        },
+        "christ": {
+          "title": "Centré sur le Christ",
+          "desc": "Offrir une éducation qui honore Dieu et se concentre sur l'identification des talents individuels."
+        },
+        "job": {
+          "title": "Prêt pour l'Emploi",
+          "desc": "Développer les talents émergents en programmation, systèmes embarqués et robotique."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Avenir ?",
+      "description": "Rejoignez une communauté d'innovateurs, de bâtisseurs et de rêveurs. Votre voyage dans le monde de la technologie commence ici à NGA Coding Academy.",
+      "apply": "Postuler Maintenant",
+      "contact": "Contactez-nous"
+    }
+  },
   "reasons": {
     "title": "Pourquoi choisir CNA?",
     "curriculum": {
@@ -98,6 +175,92 @@
   },
   "partners": {
     "title": "Nos Partenaires"
+  },
+  "courses": {
+    "hero": {
+      "badge": "Curriculum Académique 2025",
+      "title": "Notre Curriculum",
+      "highlight": "De Classe Mondiale",
+      "description": "Un syllabus rigoureux, aligné sur l'industrie, conçu pour forger la prochaine génération de leaders technologiques africains grâce à des compétences pratiques et une maîtrise théorique.",
+      "explore": "Explorer"
+    },
+    "categories": {
+      "software": {
+        "title": "Génie Logiciel",
+        "description": "Construisez l'avenir numérique. Maîtrisez la gamme complète des technologies de développement web et applicatif."
+      },
+      "hardware": {
+        "title": "Embarqué & Matériel",
+        "description": "Comblez le fossé entre les mondes physique et numérique. Concevez des systèmes intelligents qui interagissent avec la réalité."
+      },
+      "core": {
+        "title": "Noyau Professionnel",
+        "description": "Leadership au-delà du code. Développez les compétences essentielles pour prospérer dans l'écosystème technologique mondial."
+      }
+    },
+    "list": {
+      "se101": {
+        "title": "Développement d'applications Web (JS)",
+        "desc": "Créez des applications web dynamiques et interactives en utilisant des frameworks JavaScript modernes comme React et Next.js."
+      },
+      "se102": {
+        "title": "Développement d'applications Web (PHP)",
+        "desc": "Créez des applications côté serveur robustes et des API sécurisées alimentant le web moderne."
+      },
+      "cs101": {
+        "title": "Fondamentaux de la programmation C",
+        "desc": "Plongez dans la gestion de la mémoire, les pointeurs et l'architecture système de bas niveau."
+      },
+      "db101": {
+        "title": "Développement de bases de données de base",
+        "desc": "Concevez des schémas évolutifs et écrivez des requêtes SQL efficaces pour des applications pilotées par les données."
+      },
+      "ui101": {
+        "title": "Conception d'interface utilisateur Web",
+        "desc": "Maîtrisez l'art de créer des interfaces web belles, réactives et accessibles."
+      },
+      "ux101": {
+        "title": "Conception d'interface utilisateur graphique",
+        "desc": "Concevez des expériences utilisateur intuitives pour les applications de bureau et mobiles."
+      },
+      "es201": {
+        "title": "Conception de systèmes embarqués",
+        "desc": "Programmez des microcontrôleurs pour contrôler des capteurs, des moteurs et des appareils IoT."
+      },
+      "ee201": {
+        "title": "Circuits électriques et électroniques",
+        "desc": "Analysez et concevez des circuits analogiques/numériques complexes et des instruments optiques."
+      },
+      "nw201": {
+        "title": "Fondamentaux des réseaux",
+        "desc": "Architecturez des réseaux informatiques sécurisés et fiables et des protocoles de communication."
+      },
+      "bus101": {
+        "title": "Entrepreneuriat",
+        "desc": "Apprenez à identifier les opportunités, lancer des entreprises et gérer des projets innovants."
+      },
+      "eng101": {
+        "title": "Anglais technique",
+        "desc": "Maîtrisez la communication professionnelle pour les environnements techniques internationaux."
+      },
+      "mat101": {
+        "title": "Mathématiques de l'ingénieur",
+        "desc": "Appliquez des concepts mathématiques avancés pour résoudre des défis d'ingénierie complexes."
+      },
+      "eth101": {
+        "title": "Citoyenneté numérique",
+        "desc": "Naviguez dans les responsabilités éthiques, juridiques et sociales de la technologie."
+      },
+      "lan101": {
+        "title": "Communication en Kinyarwanda",
+        "desc": "Approfondissez la compréhension culturelle et les compétences de communication professionnelle locale."
+      }
+    },
+    "cta": {
+      "title": "PRÊT À",
+      "highlight": "POSTULER ?",
+      "button": "Commencer l'inscription"
+    }
   },
   "footer": {
     "questions": "Vous avez des questions ?",

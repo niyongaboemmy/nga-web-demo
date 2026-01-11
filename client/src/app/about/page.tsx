@@ -15,6 +15,7 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import Hero1Image from "../../assets/hero1.png";
 import MissionImage from "../../assets/r-image1.png";
 import VisionImage from "../../assets/r-image2.png";
@@ -22,40 +23,41 @@ import { ArrowDown } from "lucide-react";
 import OurPartners from "@/components/OurPartners";
 
 const AboutPage = () => {
+  const { t } = useTranslation("common");
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
   const values = [
     {
       icon: FiZap,
-      title: "Innovation & Skills",
-      desc: "Preparing skilled graduates ready to innovate in the national and global tech landscape.",
+      title: t("aboutPage.values.items.innovation.title"),
+      desc: t("aboutPage.values.items.innovation.desc"),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: FiCheck,
-      title: "Ethical Leadership",
-      desc: "Shaping professionals who embody strong moral character and ethical responsibility.",
+      title: t("aboutPage.values.items.ethical.title"),
+      desc: t("aboutPage.values.items.ethical.desc"),
       color: "from-orange-500 to-red-500"
     },
     {
       icon: FiUsers,
-      title: "Christ-Centered",
-      desc: "Offering education that honors God and focuses on identifying individual talents.",
+      title: t("aboutPage.values.items.christ.title"),
+      desc: t("aboutPage.values.items.christ.desc"),
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: FiGlobe,
-      title: "Job-Ready",
-      desc: "Developing emerging talent in Programming, Embedded Systems, and Robotics.",
+      title: t("aboutPage.values.items.job.title"),
+      desc: t("aboutPage.values.items.job.desc"),
       color: "from-purple-500 to-indigo-600"
     }
   ];
 
   const stats = [
-    { number: "500+", label: "Students Trained", icon: FiUsers },
-    { number: "98%", label: "Success Rate", icon: FiTrendingUp },
-    { number: "15+", label: "Partner Organizations", icon: FiAward },
-    { number: "5+", label: "Years of Excellence", icon: FiBook }
+    { number: "500+", label: t("aboutPage.stats.students"), icon: FiUsers },
+    { number: "98%", label: t("aboutPage.stats.success"), icon: FiTrendingUp },
+    { number: "15+", label: t("aboutPage.stats.partners"), icon: FiAward },
+    { number: "5+", label: t("aboutPage.stats.years"), icon: FiBook }
   ];
 
   return (
@@ -90,30 +92,30 @@ const AboutPage = () => {
         <div className="relative z-10 h-screen flex flex-col justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
             <span className="inline-block py-1 px-3 rounded-full bg-primary-500/20 text-blue-200 text-sm font-semibold mb-6 animate-fade-in-up uppercase tracking-widest backdrop-blur-md border border-white/10">
-              About NGA Coding Academy
+              {t("aboutPage.hero.badge")}
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 leading-tight text-white" data-aos="fade-up" data-aos-delay="100">
-              Empowering the <br className="hidden md:block" />
+              {t("aboutPage.hero.title")} <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-orange-200">
-                Next Generation
+                {t("aboutPage.hero.highlight")}
               </span>{" "}
-              of Tech Leaders
+              {t("aboutPage.hero.suffix")}
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200">
-              NGA-Coding Academy is a private high school and emerging Centre of Excellence dedicated to developing exceptional talent in Software Programming, Embedded Systems, and Robotics.
+              {t("aboutPage.hero.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="300">
               <Link
                 href="/contact"
                 className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-full shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
               >
-                Get Started Today <FiArrowRight />
+                {t("aboutPage.hero.start")} <FiArrowRight />
               </Link>
               <Link
                 href="/programs"
                 className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105"
               >
-                Explore Programs
+                {t("aboutPage.hero.explore")}
               </Link>
             </div>
           </div>
@@ -158,14 +160,14 @@ const AboutPage = () => {
           <div className="text-center mb-16 space-y-4" data-aos="fade-up">
             <div className="inline-block mb-4">
               <span className="px-6 py-3 bg-primary-800 dark:bg-primary-700 text-white text-sm font-bold rounded-full shadow-lg uppercase tracking-wider">
-                Our Impact
+                {t("aboutPage.stats.badge")}
               </span>
             </div>
             <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black dark:text-white leading-tight">
-              Making a Difference in Tech Education
+              {t("aboutPage.stats.title")}
             </h2>
             <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Our commitment to excellence is reflected in our achievements and the success of our students
+              {t("aboutPage.stats.description")}
             </p>
           </div>
 
@@ -201,16 +203,16 @@ const AboutPage = () => {
             <div className="lg:w-1/2 order-2 lg:order-1">
               <div className="flex items-center gap-2 mb-4 text-primary-600 dark:text-primary-400 font-bold tracking-wider uppercase text-sm">
                 <div className="w-8 h-1 bg-primary-600 dark:bg-primary-400 rounded-full"></div>
-                Our Mission
+                {t("aboutPage.mission.badge")}
               </div>
               <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-8 leading-tight" data-aos="fade-right">
-                Serving the <span className="text-primary-600 dark:text-primary-400">Community</span> Through Education
+                {t("aboutPage.mission.title")} <span className="text-primary-600 dark:text-primary-400">{t("aboutPage.mission.highlight")}</span> {t("aboutPage.mission.suffix")}
               </h2>
               <p className="text-base text-gray-600 dark:text-gray-400 mb-8 leading-relaxed" data-aos="fade-right" data-aos-delay="100">
-                New Generation Academy's mission is to serve and impact the community through educating, nurturing, and caring for children entrusted to us. We are dedicated to developing exceptional talent that will shape the future of technology.
+                {t("aboutPage.mission.description")}
               </p>
               <ul className="space-y-4 mb-8" data-aos="fade-right" data-aos-delay="200">
-                {['Educating & Nurturing', 'Community Impact', 'Exceptional Talent'].map((item, i) => (
+                {[t("aboutPage.mission.list.educating"), t("aboutPage.mission.list.community"), t("aboutPage.mission.list.talent")].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-base font-medium">
                     <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center">
                       <FiCheck size={14} />
@@ -236,7 +238,7 @@ const AboutPage = () => {
               <div className="absolute -bottom-6 -left-6 z-20 hidden md:block">
                 <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border-2 border-primary-500/30 dark:border-primary-400/30 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 hover:scale-105">
                   <div className="text-5xl font-black bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent mb-2">98%</div>
-                  <div className="text-base font-bold text-gray-700 dark:text-gray-200">Student Success Rate</div>
+                  <div className="text-base font-bold text-gray-700 dark:text-gray-200">{t("aboutPage.mission.floating_title")}</div>
                 </div>
               </div>
             </div>
@@ -265,24 +267,24 @@ const AboutPage = () => {
             <div className="lg:w-1/2" data-aos="fade-left">
               <div className="flex items-center gap-2 mb-4 text-secondary-500 font-bold tracking-wider uppercase text-sm">
                 <div className="w-8 h-1 bg-secondary-500 rounded-full"></div>
-                Our Vision
+                {t("aboutPage.vision.badge")}
               </div>
               <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-8 leading-tight">
-                Christ-Centered <span className="text-secondary-500">Education</span> for Individual Growth
+                {t("aboutPage.vision.title")} <span className="text-secondary-500">{t("aboutPage.vision.highlight")}</span> {t("aboutPage.vision.suffix")}
               </h2>
               <p className="text-base text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                New Generation Academy aspires to consistently offer Christ-centered education that focuses on individual uniqueness and talents to the glory of God.
+                {t("aboutPage.vision.description")}
               </p>
               <div className="flex gap-4">
                 <div className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 max-w-xs">
                   <FiTarget className="w-8 h-8 text-secondary-500 mb-2" />
-                  <h4 className="font-bold mb-1">Uniqueness</h4>
-                  <p className="text-sm text-gray-500">Focusing on individual talents.</p>
+                  <h4 className="font-bold mb-1">{t("aboutPage.vision.box1.title")}</h4>
+                  <p className="text-sm text-gray-500">{t("aboutPage.vision.box1.desc")}</p>
                 </div>
                 <div className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 max-w-xs">
                   <FiEye className="w-8 h-8 text-secondary-500 mb-2" />
-                  <h4 className="font-bold mb-1">Glory of God</h4>
-                  <p className="text-sm text-gray-500">Education with a higher purpose.</p>
+                  <h4 className="font-bold mb-1">{t("aboutPage.vision.box2.title")}</h4>
+                  <p className="text-sm text-gray-500">{t("aboutPage.vision.box2.desc")}</p>
                 </div>
               </div>
             </div>
@@ -302,14 +304,14 @@ const AboutPage = () => {
           <div className="text-center mb-16 space-y-4" data-aos="fade-up">
             <div className="inline-block mb-4">
               <span className="px-6 py-3 bg-primary-800 dark:bg-primary-700 text-white text-sm font-bold rounded-full shadow-lg uppercase tracking-wider">
-                Our Values
+                {t("aboutPage.values.badge")}
               </span>
             </div>
             <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black dark:text-white leading-tight">
-              Our Purpose & Values
+              {t("aboutPage.values.title")}
             </h2>
             <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              We prepare skilled, ethical, and job-ready graduates who embody Christian values as they innovate in the global tech landscape.
+              {t("aboutPage.values.description")}
             </p>
           </div>
 
@@ -368,23 +370,23 @@ const AboutPage = () => {
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">
-            Ready to Transform Your Future?
+            {t("aboutPage.cta.title")}
           </h2>
           <p className="text-primary-100 text-xl mb-10 leading-relaxed">
-            Join a community of innovators, builders, and dreamers. Your journey into the world of technology starts here at NGA Coding Academy.
+            {t("aboutPage.cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/register"
               className="px-10 py-4 bg-white text-primary-900 font-bold rounded-full shadow-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300"
             >
-              Apply Now
+              {t("aboutPage.cta.apply")}
             </Link>
             <Link
               href="/contact"
               className="px-10 py-4 bg-transparent border-2 border-primary-400 text-white font-bold rounded-full hover:bg-primary-800 transition-all duration-300"
             >
-              Contact Us
+              {t("aboutPage.cta.contact")}
             </Link>
           </div>
         </div>

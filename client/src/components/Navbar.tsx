@@ -36,10 +36,11 @@ const Navbar = () => {
     const updateActiveLink = () => {
       if (pathname === "/about" || pathname?.startsWith("/about/")) {
         setActiveLink("about");
+      } else if (pathname === "/courses" || pathname?.startsWith("/courses/")) {
+        setActiveLink("courses");
       } else if (pathname === "/") {
         const hash = window.location.hash.slice(1);
-        if (hash === "courses") setActiveLink("courses");
-        else if (hash === "contact") setActiveLink("contact");
+        if (hash === "contact") setActiveLink("contact");
         else setActiveLink("home");
       } else {
         setActiveLink("home");
@@ -161,7 +162,7 @@ const Navbar = () => {
               {t("nav.about")}
             </Link>
             <Link
-              href="/#courses"
+              href="/courses"
               onClick={() => setActiveLink("courses")}
               className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "courses"
                 ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
@@ -282,7 +283,7 @@ const Navbar = () => {
                   {t("nav.about")}
                 </Link>
                 <Link
-                  href="/#courses"
+                  href="/courses"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setActiveLink("courses");
