@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "aos/dist/aos.css"; // Import AOS styles
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundVideo from "@/components/BackgroundVideo";
+import AOSInit from "@/components/AOSInit";
+import { ThemeProvider } from "@/context/ThemeContext";
 import I18nProvider from "@/components/I18nProvider";
 
 const geistSans = Geist({
@@ -44,9 +48,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black/10 dark:bg-gray-950 cause-regular`}
       >
         <I18nProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <ThemeProvider>
+            <AOSInit />
+            <BackgroundVideo />
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </I18nProvider>
       </body>
     </html>
