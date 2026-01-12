@@ -89,7 +89,7 @@ const AboutPage = () => {
           }}
         ></div>
 
-        <div className="relative z-10 h-screen flex flex-col justify-center">
+        <div className="relative z-10 min-h-screen flex flex-col justify-center py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
             <span className="inline-block py-1 px-3 rounded-full bg-primary-500/20 text-blue-200 text-sm font-semibold mb-6 animate-fade-in-up uppercase tracking-widest backdrop-blur-md border border-white/10">
               {t("aboutPage.hero.badge")}
@@ -120,32 +120,6 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
-        <div className="hidden absolute bottom-8 left-1/2 -translate-x-1/2 z-20 sm:flex flex-col items-center gap-3 animate-bounce">
-          <span className="text-white/60 text-sm font-semibold tracking-widest">
-            SCROLL TO EXPLORE
-          </span>
-          <ArrowDown className="w-5 h-5 text-white/60" />
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 z-10 h-24 lg:h-32">
-          <svg
-            viewBox="0 0 1440 120"
-            className="w-full h-full fill-white dark:fill-gray-950"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,40 Q360,0 720,40 T1440,40 L1440,120 L0,120 Z"
-              className="animate-wave"
-            />
-          </svg>
-        </div>
-
-        <style>{`
-            .animate-wave {
-              animation: wave 4s ease-in-out infinite;
-            }
-          `}</style>
       </div>
 
       {/* Statistics Section */}
