@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -12,38 +13,38 @@ import {
   FiX,
   FiCheck,
 } from "react-icons/fi";
+import { useTheme } from "@/context/ThemeContext";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const { t, i18n } = useTranslation("common");
-  const [isDark, setIsDark] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
+
   const [language, setLanguage] = useState("en");
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
-  // const [isScrolled, setIsScrolled] = useState(false);
 
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-      document.documentElement.classList.remove("dark");
-      if (!savedTheme) {
-        localStorage.setItem("theme", "light");
-      }
-    }
-
     const savedLanguage = localStorage.getItem("language") || "en";
     setLanguage(savedLanguage);
 
     const updateActiveLink = () => {
-      const hash = window.location.hash.slice(1) || "home";
-      setActiveLink(hash);
+      if (pathname === "/about" || pathname?.startsWith("/about/")) {
+        setActiveLink("about");
+      } else if (pathname === "/courses" || pathname?.startsWith("/courses/")) {
+        setActiveLink("courses");
+      } else if (pathname === "/") {
+        const hash = window.location.hash.slice(1);
+        if (hash === "contact") setActiveLink("contact");
+        else setActiveLink("home");
+      } else {
+        setActiveLink("home");
+      }
     };
 
     updateActiveLink();
@@ -59,7 +60,7 @@ const Navbar = () => {
       window.removeEventListener("hashchange", updateActiveLink);
       // window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   // Listen for i18n language changes and update component state
   useEffect(() => {
@@ -93,16 +94,16 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
+  // const toggleTheme = () => {
+  //   setIsDark(!isDark);
+  //   if (!isDark) {
+  //     document.documentElement.classList.add("dark");
+  //     localStorage.setItem("theme", "dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // };
 
   const changeLanguage = (lang: string) => {
     setLanguage(lang);
@@ -118,7 +119,7 @@ const Navbar = () => {
         !isDark
           ? "bg-dark-500 border-none border-white/20"
           : "bg-dark-700 dark:bg-transparent border-none border-gray-800/50"
-      } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}
+        } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -141,42 +142,42 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-2 text-sm">
             <Link
-              href="#home"
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${
-                activeLink === "home"
-                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
-              }`}
+              href="/"
+              onClick={() => setActiveLink("home")}
+              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "home"
+                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+                }`}
             >
               {t("nav.home")}
             </Link>
             <Link
-              href="#about"
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${
-                activeLink === "about"
-                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
-              }`}
+              href="/about"
+              onClick={() => setActiveLink("about")}
+              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "about"
+                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+                }`}
             >
               {t("nav.about")}
             </Link>
             <Link
-              href="#courses"
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${
-                activeLink === "courses"
-                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
-              }`}
+              href="/courses"
+              onClick={() => setActiveLink("courses")}
+              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "courses"
+                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+                }`}
             >
               {t("nav.courses")}
             </Link>
             <Link
-              href="#contact"
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${
-                activeLink === "contact"
-                  ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                  : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
-              }`}
+              href="/#contact"
+              onClick={() => setActiveLink("contact")}
+              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "contact"
+                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
+                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+                }`}
             >
               {t("nav.contact")}
             </Link>
@@ -192,9 +193,8 @@ const Navbar = () => {
                 </div>
                 <div>
                   <FiChevronDown
-                    className={`ml-2 transition-transform duration-300 ${
-                      isLangDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`ml-2 transition-transform duration-300 ${isLangDropdownOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </div>
               </button>
@@ -205,11 +205,10 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => changeLanguage("en")}
-                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-2xl transition-colors duration-200 ${
-                      language === "en"
-                        ? "bg-primary-100 dark:bg-primary-950/50"
-                        : ""
-                    }`}
+                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-2xl transition-colors duration-200 ${language === "en"
+                      ? "bg-primary-100 dark:bg-primary-950/50"
+                      : ""
+                      }`}
                   >
                     {t("nav.english")}
                     {language === "en" && (
@@ -220,11 +219,10 @@ const Navbar = () => {
                   </button>
                   <button
                     onClick={() => changeLanguage("fr")}
-                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-2xl transition-colors duration-200 ${
-                      language === "fr"
-                        ? "bg-primary-100 dark:bg-primary-950/50"
-                        : ""
-                    }`}
+                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-2xl transition-colors duration-200 ${language === "fr"
+                      ? "bg-primary-100 dark:bg-primary-950/50"
+                      : ""
+                      }`}
                   >
                     {t("nav.french")}
                     {language === "fr" && (
@@ -251,9 +249,8 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 backdrop-blur-md border-l border-gray-200 dark:border-gray-700 shadow-lg transform ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 z-50`}
+          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 backdrop-blur-md border-l border-gray-200 dark:border-gray-700 shadow-lg transform ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 z-50`}
           ref={mobileMenuRef}
         >
           <div className="px-6 py-6 space-y-4 bg-white dark:bg-gray-900 w-full">
@@ -263,46 +260,51 @@ const Navbar = () => {
               </h3>
               <div className="space-y-1">
                 <Link
-                  href="#home"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${
-                    activeLink === "home"
-                      ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                      : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
+                  href="/"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setActiveLink("home");
+                  }}
+                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "home"
+                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
+                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
                 >
                   {t("nav.home")}
                 </Link>
                 <Link
-                  href="#about"
+                  href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${
-                    activeLink === "about"
-                      ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                      : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
+                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "about"
+                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
+                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
                 >
                   {t("nav.about")}
                 </Link>
                 <Link
-                  href="#courses"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${
-                    activeLink === "courses"
-                      ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                      : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
+                  href="/courses"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setActiveLink("courses");
+                  }}
+                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "courses"
+                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
+                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
                 >
                   {t("nav.courses")}
                 </Link>
                 <Link
-                  href="#contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${
-                    activeLink === "contact"
-                      ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                      : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
+                  href="/#contact"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setActiveLink("contact");
+                  }}
+                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "contact"
+                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
+                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
                 >
                   {t("nav.contact")}
                 </Link>

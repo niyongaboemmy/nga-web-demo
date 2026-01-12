@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
-import { ChevronRight, Play, ArrowDown } from "lucide-react";
+import { ChevronRight, ArrowDown } from "lucide-react";
 import Hero1Image from "../assets/hero1.png";
 import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
@@ -19,145 +18,18 @@ const AdsToRegister = dynamic(() => import("@/components/AdsToRegister"));
 export default function Home() {
   const { t } = useTranslation("common");
 
-  const slides: Array<
-    { type: "image"; src: any } | { type: "video"; src: string }
-  > = [
-    { type: "video", src: "./videos/video1.mp4" },
-    { type: "video", src: "./videos/video2.mp4" },
-    { type: "video", src: "./videos/video3.mp4" },
-  ];
+  // const fallbackImage = Hero1Image;
 
-  const fallbackImage = Hero1Image;
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [currentVideoSrc, setCurrentVideoSrc] = useState(slides[0].src);
-  const [nextVideoSrc, setNextVideoSrc] = useState<string | null>(null);
-  const [videoError, setVideoError] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 20000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    setNextVideoSrc(slides[currentSlide].src);
-  }, [currentSlide]);
+  // Video logic moved to Global Layout (BackgroundVideo.tsx)
 
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-gray-950 overflow-x-hidden">
+    <div className="min-h-screen font-sans bg-transparent overflow-x-hidden">
       <main>
-        {/* Hero Section */}
-        <div className="relative min-h-screen w-full overflow-hidden bg-white dark:bg-gray-950">
-          {/* Background Media Container */}
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{ transform: "scale(var(--hero-scale, 1))" }}
-          >
-            {slides[currentSlide].type === "video" && !videoError ? (
-              <>
-                <video
-                  src={currentVideoSrc}
-                  autoPlay
-                  muted={isMuted}
-                  loop
-                  preload="metadata"
-                  onLoadedData={() => setVideoLoaded(true)}
-                  onError={() => setVideoError(true)}
-                  className={`w-full h-full object-cover transition-opacity duration-1000`}
-                />
-                {nextVideoSrc && (
-                  <video
-                    src={nextVideoSrc}
-                    autoPlay
-                    muted={isMuted}
-                    loop
-                    preload="metadata"
-                    onLoadedData={() => {
-                      setVideoLoaded(true);
-                      setCurrentVideoSrc(nextVideoSrc);
-                      setNextVideoSrc(null);
-                    }}
-                    onError={() => setVideoError(true)}
-                    className={`w-full h-full object-cover`}
-                  />
-                )}
-                {!videoLoaded && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 flex items-center justify-center">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
-                      <div
-                        className="w-3 h-3 bg-white rounded-full animate-bounce"
-                        style={{ animationDelay: "0.2s" }}
-                      ></div>
-                      <div
-                        className="w-3 h-3 bg-white rounded-full animate-bounce"
-                        style={{ animationDelay: "0.4s" }}
-                      ></div>
-                    </div>
-                  </div>
-                )}
-              </>
-            ) : (
-              <Image src={fallbackImage} alt="" fill className="object-cover" />
-            )}
-          </div>
+        {/* Hero Section - Content Only (Video is in Global Layout) */}
+        <div className="relative min-h-screen w-full overflow-hidden bg-transparent">
+          {/* Background Media Container Removed - Handled Globally */}
 
-          {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 dark:from-black/70 dark:via-black/60 dark:to-black/80"></div>
-
-          {/* Animated Mesh Gradient Overlay */}
-          <div
-            className="absolute inset-0 opacity-20 dark:opacity-30"
-            style={{
-              backgroundImage: `
-                radial-gradient(at 20% 50%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(249, 115, 22, 0.3) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.2) 0px, transparent 50%)
-              `,
-              backgroundSize: "200% 200%",
-            }}
-          ></div>
-
-          {/* Volume Control Button */}
-          {slides[currentSlide].type === "video" && !videoError && (
-            <button
-              onClick={() => setIsMuted(!isMuted)}
-              className="absolute top-8 right-8 z-20 p-3 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 text-white hover:bg-white/20 dark:hover:bg-white/10 hover:scale-110 transition-all duration-300 group"
-              aria-label="Toggle mute"
-            >
-              {isMuted ? (
-                <MdVolumeOff
-                  size={24}
-                  className="group-hover:scale-110 transition-transform"
-                />
-              ) : (
-                <MdVolumeUp
-                  size={24}
-                  className="group-hover:scale-110 transition-transform"
-                />
-              )}
-            </button>
-          )}
-
-          {/* Slide Indicators */}
-          <div className="absolute bottom-24 right-8 z-20 flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  index === currentSlide
-                    ? "w-8 bg-white dark:bg-orange-400"
-                    : "w-2 bg-white/50 dark:bg-white/30 hover:bg-white/70 dark:hover:bg-white/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          {/* Slide Indicators Removed */}
 
           {/* Content Container */}
           <div className="relative z-10 h-screen flex flex-col justify-center">

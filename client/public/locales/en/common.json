@@ -55,6 +55,83 @@
       "evidence": "Evidence-Based Graduate Outcomes"
     }
   },
+  "aboutPage": {
+    "hero": {
+      "badge": "About NGA Coding Academy",
+      "title": "Empowering the",
+      "highlight": "Next Generation",
+      "suffix": "of Tech Leaders",
+      "description": "NGA-Coding Academy is a private high school and emerging Centre of Excellence dedicated to developing exceptional talent in Software Programming, Embedded Systems, and Robotics.",
+      "start": "Get Started Today",
+      "explore": "Explore Programs"
+    },
+    "stats": {
+      "badge": "Our Impact",
+      "title": "Making a Difference in Tech Education",
+      "description": "Our commitment to excellence is reflected in our achievements and the success of our students",
+      "students": "Students Trained",
+      "success": "Success Rate",
+      "partners": "Partner Organizations",
+      "years": "Years of Excellence"
+    },
+    "mission": {
+      "badge": "Our Mission",
+      "title": "Serving the",
+      "highlight": "Community",
+      "suffix": "Through Education",
+      "description": "New Generation Academy's mission is to serve and impact the community through educating, nurturing, and caring for children entrusted to us. We are dedicated to developing exceptional talent that will shape the future of technology.",
+      "list": {
+        "educating": "Educating & Nurturing",
+        "community": "Community Impact",
+        "talent": "Exceptional Talent"
+      },
+      "floating_title": "Student Success Rate"
+    },
+    "vision": {
+      "badge": "Our Vision",
+      "title": "Christ-Centered",
+      "highlight": "Education",
+      "suffix": "for Individual Growth",
+      "description": "New Generation Academy aspires to consistently offer Christ-centered education that focuses on individual uniqueness and talents to the glory of God.",
+      "box1": {
+        "title": "Uniqueness",
+        "desc": "Focusing on individual talents."
+      },
+      "box2": {
+        "title": "Glory of God",
+        "desc": "Education with a higher purpose."
+      }
+    },
+    "values": {
+      "badge": "Our Values",
+      "title": "Our Purpose & Values",
+      "description": "We prepare skilled, ethical, and job-ready graduates who embody Christian values as they innovate in the global tech landscape.",
+      "items": {
+        "innovation": {
+          "title": "Innovation & Skills",
+          "desc": "Preparing skilled graduates ready to innovate in the national and global tech landscape."
+        },
+        "ethical": {
+          "title": "Ethical Leadership",
+          "desc": "Shaping professionals who embody strong moral character and ethical responsibility."
+        },
+        "christ": {
+          "title": "Christ-Centered",
+          "desc": "Offering education that honors God and focuses on identifying individual talents."
+        },
+        "job": {
+          "title": "Job-Ready",
+          "desc": "Developing emerging talent in Programming, Embedded Systems, and Robotics."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Future?",
+      "description": "Join a community of innovators, builders, and dreamers. Your journey into the world of technology starts here at NGA Coding Academy.",
+      "apply": "Apply Now",
+      "contact": "Contact Us"
+    }
+  },
   "reasons": {
     "title": "Why Choose CNA?",
     "curriculum": {
@@ -98,6 +175,92 @@
   },
   "partners": {
     "title": "Our Partners"
+  },
+  "courses": {
+    "hero": {
+      "badge": "Academic Curriculum 2025",
+      "title": "Our World-Class",
+      "highlight": "Curriculum",
+      "description": "A rigorous, industry-aligned syllabus designed to forge the next generation of African tech leaders through practical skills and theoretical mastery.",
+      "explore": "Explore"
+    },
+    "categories": {
+      "software": {
+        "title": "Software Engineering",
+        "description": "Build the digital future. Master the full stack of web and application development technologies."
+      },
+      "hardware": {
+        "title": "Embedded & Hardware",
+        "description": "Bridge the physical and digital worlds. Design smart systems that interact with reality."
+      },
+      "core": {
+        "title": "Professional Core",
+        "description": "Leadership beyond code. Develop the essential skills to thrive in the global tech ecosystem."
+      }
+    },
+    "list": {
+      "se101": {
+        "title": "Web Application Development (JS)",
+        "desc": "Build dynamic, interactive web apps using modern JavaScript frameworks like React and Next.js."
+      },
+      "se102": {
+        "title": "Web Application Development (PHP)",
+        "desc": "Create robust server-side applications and secure APIs powering the modern web."
+      },
+      "cs101": {
+        "title": "C Programming Fundamentals",
+        "desc": "Deep dive into memory management, pointers, and low-level system architecture."
+      },
+      "db101": {
+        "title": "Basic Database Development",
+        "desc": "Design scalable schemas and write efficient SQL queries for data-driven apps."
+      },
+      "ui101": {
+        "title": "Web User Interface Design",
+        "desc": "Master the art of creating beautiful, responsive, and accessible web interfaces."
+      },
+      "ux101": {
+        "title": "Graphic User Interface Design",
+        "desc": "Design intuitive user experiences for desktop and mobile applications."
+      },
+      "es201": {
+        "title": "Embedded Systems Design",
+        "desc": "Program microcontrollers to control sensors, motors, and IoT devices."
+      },
+      "ee201": {
+        "title": "Electrical & Electronic Circuits",
+        "desc": "Analyze and design complex analog/digital circuits and optical instruments."
+      },
+      "nw201": {
+        "title": "Networking Fundamentals",
+        "desc": "Architect secure and reliable computer networks and communication protocols."
+      },
+      "bus101": {
+        "title": "Entrepreneurship",
+        "desc": "Learn to identify opportunities, launch ventures, and manage innovative projects."
+      },
+      "eng101": {
+        "title": "Technical English",
+        "desc": "Master professional communication for international technical environments."
+      },
+      "mat101": {
+        "title": "Engineering Mathematics",
+        "desc": "Apply advanced mathematical concepts to solve complex engineering challenges."
+      },
+      "eth101": {
+        "title": "Digital Citizenship",
+        "desc": "Navigate the ethical, legal, and social responsibilities of technology."
+      },
+      "lan101": {
+        "title": "Kinyarwanda Communication",
+        "desc": "Deepen cultural understanding and local professional communication skills."
+      }
+    },
+    "cta": {
+      "title": "READY TO",
+      "highlight": "APPLY?",
+      "button": "Start Registration"
+    }
   },
   "footer": {
     "questions": "Have a Questions?",
