@@ -78,7 +78,7 @@ export default function Home() {
           </div>
 
           {/* Cute Animated Divider */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 h-32">
+          <div className="absolute bottom-0 left-0 right-0 z-10 h-24">
             <svg
               viewBox="0 0 1440 120"
               className="w-full h-full fill-primary-600 dark:fill-primary-700"

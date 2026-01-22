@@ -1,9 +1,12 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
+    "academics": "Academics",
+    "innovation": "Innovation",
+    "admissions": "Admissions",
     "courses": "Courses",
-    "contact": "Contact",
+    "contact": "Contact Us",
     "language": "Language",
     "theme": "Theme",
     "light": "Light",
