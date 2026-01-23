@@ -1,36 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Hero1Image from "../assets/hero1.png";
 
-import { Suspense } from "react";
-
-const PreloaderContent = () => {
-    const [loading, setLoading] = useState(true);
+const Preloader = () => {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // Initial load
-        const timer = setTimeout(() => {
+        // Only trigger on Home page
+        if (pathname === "/") {
+            setLoading(true);
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 1000);
+            return () => clearTimeout(timer);
+        } else {
             setLoading(false);
-        }, 2500); // 2.5s delay for better branding visibility
+        }
+    }, [pathname]);
 
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        // Route change simulation - shorter duration
-        setLoading(true);
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 1200);
-
-        return () => clearTimeout(timer);
-    }, [pathname, searchParams]);
+    // Don't render anything if not on home page (prevents flash on other pages)
+    if (pathname !== "/") return null;
 
     return (
         <AnimatePresence>
@@ -105,14 +99,6 @@ const PreloaderContent = () => {
                 </motion.div>
             )}
         </AnimatePresence>
-    );
-};
-
-const Preloader = () => {
-    return (
-        <Suspense fallback={null}>
-            <PreloaderContent />
-        </Suspense>
     );
 };
 
