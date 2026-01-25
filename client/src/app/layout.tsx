@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ngacoding.com"),
   title: "NGA-Coding Academy",
   description:
     "Rwanda’s Private Centre of Excellence in Software Programming, Embedded Systems & Robotics",

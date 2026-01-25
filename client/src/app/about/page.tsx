@@ -24,7 +24,7 @@ import OurPartners from "@/components/OurPartners";
 import AdsToRegister from "@/components/AdsToRegister";
 import { motion } from "framer-motion";
 
-const AboutPage = () => {
+const AboutPageContent = () => {
   const { t } = useTranslation("common");
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
@@ -362,6 +362,14 @@ const AboutPage = () => {
         <AdsToRegister />
       </section>
     </div>
+  );
+};
+
+const AboutPage = () => {
+  return (
+    <React.Suspense fallback={null}>
+      <AboutPageContent />
+    </React.Suspense>
   );
 };
 

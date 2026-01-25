@@ -6,7 +6,9 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Hero1Image from "../assets/hero1.png";
 
-const Preloader = () => {
+import { Suspense } from "react";
+
+const PreloaderContent = () => {
     const [loading, setLoading] = useState(true);
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -103,6 +105,14 @@ const Preloader = () => {
                 </motion.div>
             )}
         </AnimatePresence>
+    );
+};
+
+const Preloader = () => {
+    return (
+        <Suspense fallback={null}>
+            <PreloaderContent />
+        </Suspense>
     );
 };
 
