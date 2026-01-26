@@ -118,13 +118,32 @@ const Navbar = () => {
     setIsLangDropdownOpen(false);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 50vh is half the window height
+      setIsScrolled(window.scrollY > window.innerHeight * 0.5);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/10 md:border-none
         ${!isDark
           ? "bg-gray-900/90 md:bg-transparent"
           : "bg-gray-950/90 md:bg-transparent"
-        }`}
+        }
+        ${isScrolled ? "!bg-gray-900/95 dark:!bg-gray-950/95 shadow-lg border-b border-white/5" : ""}
+      `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
