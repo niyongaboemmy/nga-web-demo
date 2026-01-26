@@ -6,6 +6,7 @@ import Link from "next/link";
 import Hero1Image from "../../assets/hero1.png";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, ChevronDown, Award, Cpu } from "lucide-react";
+import AdsToRegister from "@/components/AdsToRegister";
 
 const AdmissionsPage = () => {
     const scrollToContent = () => {
@@ -70,7 +71,7 @@ const AdmissionsPage = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-lg md:text-2xl text-gray-300 max-w-2xl font-light mb-10 leading-relaxed"
                     >
-                        Rwanda Coding Academy searches for the brightest minds to shape the next generation of technology leaders.
+                        New Generation Academy searches for the brightest minds to shape the next generation of technology leaders.
                     </motion.p>
 
                     <motion.div
@@ -94,12 +95,22 @@ const AdmissionsPage = () => {
                             <ChevronDown className="w-5 h-5" />
                         </button>
                     </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                        className="absolute bottom-10 cursor-pointer left-auto"
+                        onClick={scrollToContent}
+                    >
+                        <ChevronDown className="w-10 h-10 text-white/50 hover:text-white transition-colors" />
+                    </motion.div>
                 </div>
 
                 {/* Animated Wave Divider */}
-                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-24">
+                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-16">
                     <svg
-                        viewBox="0 0 1440 120"
+                        viewBox="0 0 1440 100"
                         className="w-full h-full fill-white dark:fill-gray-950"
                         preserveAspectRatio="none"
                     >
@@ -241,6 +252,11 @@ const AdmissionsPage = () => {
                         </motion.div>
                     </div>
                 </div>
+            </section>
+
+            {/* Ads to Register Section */}
+            <section>
+                <AdsToRegister />
             </section>
         </div>
     );

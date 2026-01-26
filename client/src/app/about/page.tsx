@@ -19,8 +19,10 @@ import { useTranslation } from "react-i18next";
 import Hero1Image from "../../assets/hero1.png";
 import MissionImage from "../../assets/r-image1.png";
 import VisionImage from "../../assets/r-image2.png";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ChevronDown } from "lucide-react";
 import OurPartners from "@/components/OurPartners";
+import AdsToRegister from "@/components/AdsToRegister";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
   const { t } = useTranslation("common");
@@ -115,12 +117,13 @@ const AboutPage = () => {
               </Link>
             </div>
           </div>
+
         </div>
 
         {/* Animated Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-24">
+        <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-16">
           <svg
-            viewBox="0 0 1440 120"
+            viewBox="0 0 1440 100"
             className="w-full h-full fill-white dark:fill-gray-950"
             preserveAspectRatio="none"
           >
@@ -354,35 +357,9 @@ const AboutPage = () => {
         <OurPartners />
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary-500 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">
-            {t("aboutPage.cta.title")}
-          </h2>
-          <p className="text-primary-100 text-xl mb-10 leading-relaxed">
-            {t("aboutPage.cta.description")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/register"
-              className="px-10 py-4 bg-white text-primary-900 font-bold rounded-full shadow-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300"
-            >
-              {t("aboutPage.cta.apply")}
-            </Link>
-            <Link
-              href="/contact"
-              className="px-10 py-4 bg-transparent border-2 border-primary-400 text-white font-bold rounded-full hover:bg-primary-800 transition-all duration-300"
-            >
-              {t("aboutPage.cta.contact")}
-            </Link>
-          </div>
-        </div>
+      {/* Ads to Register Section */}
+      <section>
+        <AdsToRegister />
       </section>
     </div>
   );

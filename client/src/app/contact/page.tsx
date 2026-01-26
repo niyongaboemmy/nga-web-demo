@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Hero1Image from "../../assets/hero1.png";
 import { Mail, MapPin, Phone, Send, ArrowRight, ExternalLink, ChevronDown } from "lucide-react";
+import AdsToRegister from "@/components/AdsToRegister";
 import { motion } from "framer-motion";
 
 const ContactPage = () => {
@@ -81,9 +82,9 @@ const ContactPage = () => {
                 </div>
 
                 {/* Animated Wave Divider */}
-                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-24">
+                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-16">
                     <svg
-                        viewBox="0 0 1440 120"
+                        viewBox="0 0 1440 100"
                         className="w-full h-full fill-white dark:fill-gray-950"
                         preserveAspectRatio="none"
                     >
@@ -248,6 +249,11 @@ const ContactPage = () => {
                         </motion.div>
                     </div>
                 </div>
+            </section>
+
+            {/* Ads to Register Section */}
+            <section>
+                <AdsToRegister />
             </section>
         </div>
     );

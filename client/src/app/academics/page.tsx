@@ -4,9 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
-import { ArrowDown, Clock, BarChart, Layout, Beaker, Tag, BookOpen, GraduationCap } from "lucide-react";
+import { ArrowDown, Clock, BarChart, Layout, Beaker, Tag, BookOpen, GraduationCap, ChevronDown } from "lucide-react";
+import AdsToRegister from "@/components/AdsToRegister";
 import { useTranslation } from "react-i18next";
 import Hero1Image from "../../assets/hero1.png";
+import { motion } from "framer-motion";
 
 // Course Interface
 interface Course {
@@ -234,13 +236,15 @@ const AcademicsPage = () => {
                             A structured, progressive curriculum designed to transform beginners into industry-ready engineers and innovators.
                         </p>
                     </div>
+
+
                 </div>
 
                 {/* Animated Wave Divider */}
-                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-24">
+                <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-16">
                     <svg
-                        viewBox="0 0 1440 120"
-                        className="w-full h-full fill-white dark:fill-black"
+                        viewBox="0 0 1440 100"
+                        className="w-full h-full fill-white dark:fill-gray-950"
                         preserveAspectRatio="none"
                     >
                         <path
@@ -380,19 +384,9 @@ const AcademicsPage = () => {
                 ))}
             </div>
 
-            {/* Footer CTA */}
-            <section className="py-32 bg-black text-white relative overflow-hidden">
-                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-6xl md:text-8xl font-black mb-10 tracking-tighter">
-                        {t("courses.cta.title")} <span className="text-orange-500">{t("courses.cta.highlight")}</span>
-                    </h2>
-                    <Link
-                        href="/admissions"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 text-lg tracking-wide uppercase"
-                    >
-                        Apply Now <FiArrowUpRight />
-                    </Link>
-                </div>
+            {/* Ads to Register Section */}
+            <section>
+                <AdsToRegister />
             </section>
         </div>
     );
