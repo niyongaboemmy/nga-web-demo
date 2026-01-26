@@ -8,6 +8,7 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import AOSInit from "@/components/AOSInit";
 import { ThemeProvider } from "@/context/ThemeContext";
 import I18nProvider from "@/components/I18nProvider";
+import Preloader from "@/components/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
       >
         <I18nProvider>
           <ThemeProvider>
+            <Preloader />
             <AOSInit />
             <BackgroundVideo />
             <Navbar />

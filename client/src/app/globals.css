@@ -25,6 +25,10 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom animations for modern feel */
 @keyframes fadeIn {
   from {

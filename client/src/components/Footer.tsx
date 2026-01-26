@@ -31,7 +31,7 @@ const Footer = () => {
               {/* Phone */}
               <div className="flex items-center gap-3">
                 <MdPhone className="w-[18px] h-[18px] flex-shrink-0 text-[#44C0FF]" />
-                <p className="text-[13px]">+250…</p>
+                <p className="text-gray-100 hover:text-[#44C0FF] transition-colors">+250 791 823 651</p>
               </div>
 
               {/* Email */}

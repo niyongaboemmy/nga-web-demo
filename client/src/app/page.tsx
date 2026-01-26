@@ -35,29 +35,29 @@ export default function Home() {
           <div className="relative z-10 h-screen flex flex-col justify-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               {/* Welcome Text */}
-              <div className="text-base sm:text-xl md:text-2xl text-white/80 mb-4 font-light tracking-wide">
+              <div className="text-sm sm:text-lg md:text-xl text-white/80 mb-4 font-light tracking-wide">
                 {t("hero.welcome") || "Welcome to Innovation"}
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black mb-8 leading-tight bg-gradient-to-r from-white via-blue-100 to-orange-200 dark:from-white dark:via-blue-200 dark:to-orange-300 bg-clip-text text-transparent">
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 leading-tight bg-gradient-to-r from-white via-blue-100 to-orange-200 dark:from-white dark:via-blue-200 dark:to-orange-300 bg-clip-text text-transparent">
                 {t("hero.academyName") || "Transform Tomorrow"}
               </h1>
 
               {/* Tagline */}
-              <p className="hidden sm:block text-lg sm:text-xl text-white/70 max-w-2xl mb-12 leading-relaxed font-light">
+              <p className="hidden sm:block text-base sm:text-lg text-white/70 max-w-2xl mb-12 leading-relaxed font-light">
                 {t("hero.tagline") ||
                   "Master cutting-edge technologies through hands-on learning, modern labs, and strong industry partnerships."}
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                <button className="group px-6 py-3 bg-gradient-to-r from-primary-900 to-primary-900 dark:from-dark-500 dark:to-dark-600 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-base tracking-wide">
+                <button className="group px-6 py-3 bg-gradient-to-r from-primary-900 to-primary-900 dark:from-dark-500 dark:to-dark-600 text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-sm tracking-wide">
                   {t("hero.learnMore") || "Learn More"}
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="group px-6 py-3 bg-white/10 dark:bg-white/5 backdrop-blur-md border-2 border-white/30 dark:border-white/20 text-white font-bold rounded-full hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/50 dark:hover:border-white/40 transition-all duration-300 transform hover:scale-105 text-base tracking-wide">
+                <button className="group px-6 py-3 bg-white/10 dark:bg-white/5 backdrop-blur-md border-2 border-white/30 dark:border-white/20 text-white font-medium rounded-full hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/50 dark:hover:border-white/40 transition-all duration-300 transform hover:scale-105 text-sm tracking-wide">
                   {t("hero.register") || "Register"}
                 </button>
               </div>
@@ -71,17 +71,17 @@ export default function Home() {
               opacity: "var(--scroll-opacity, 1)",
             }}
           >
-            <span className="text-white/60 dark:text-white/50 text-sm font-semibold">
+            <span className="text-white/60 dark:text-white/50 text-xs font-medium">
               SCROLL TO EXPLORE
             </span>
             <ArrowDown className="w-5 h-5 text-white/60 dark:text-white/50" />
           </div>
 
           {/* Cute Animated Divider */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 h-24">
+          <div className="absolute bottom-0 left-0 right-0 z-10 h-18">
             <svg
               viewBox="0 0 1440 120"
-              className="w-full h-full fill-primary-600 dark:fill-primary-700"
+              className="w-full h-full fill-primary-700 dark:fill-primary-700"
               preserveAspectRatio="none"
             >
               <path

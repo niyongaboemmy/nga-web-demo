@@ -12,7 +12,7 @@ const RecentBlogs = () => {
     <div className="bg-primary-100 dark:bg-gray-900 py-12 md:py-16 lg:py-20 text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-max">
         <div className="mb-12">
-          <h1 className="text-2xl font-bold text-center">{t("blogs.title")}</h1>
+          <h1 className="text-xl font-bold text-center">{t("blogs.title")}</h1>
         </div>
         <div className="grid grid-cols-12 gap-4 md:gap-8 lg:gap-16 w-full h-max mb-10">
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
@@ -28,11 +28,11 @@ const RecentBlogs = () => {
               </div>
               <div className="p-4 md:p-8">
                 <div className="flex flex-row items-center gap-3 mb-2">
-                  <div className="text-base font-bold group-hover:underline">
+                  <div className="text-sm font-semibold group-hover:underline">
                     {t("blogs.blog1.title")}
                   </div>
                 </div>
-                <div className="opacity-60 text-sm">
+                <div className="opacity-60 text-xs">
                   {t("blogs.blog1.description")}
                 </div>
                 <button className="mt-4 bg-primary-900 text-white px-6 py-2 rounded-full hover:bg-primary-900/80 transition-all duration-300 text-center text-sm">
@@ -54,11 +54,11 @@ const RecentBlogs = () => {
               </div>
               <div className="p-4 md:p-8">
                 <div className="flex flex-row items-center gap-3 mb-2">
-                  <div className="text-base font-bold group-hover:underline">
+                  <div className="text-sm font-semibold group-hover:underline">
                     {t("blogs.blog2.title")}
                   </div>
                 </div>
-                <div className="opacity-60 text-sm">
+                <div className="opacity-60 text-xs">
                   {t("blogs.blog2.description")}
                 </div>
                 <button className="mt-4 bg-primary-900 text-white px-6 py-2 rounded-full hover:bg-primary-900/80 transition-all duration-300 text-center text-sm">
@@ -80,11 +80,11 @@ const RecentBlogs = () => {
               </div>
               <div className="p-4 md:p-8">
                 <div className="flex flex-row items-center gap-3 mb-2">
-                  <div className="text-base font-bold group-hover:underline">
+                  <div className="text-sm font-semibold group-hover:underline">
                     {t("blogs.blog3.title")}
                   </div>
                 </div>
-                <div className="opacity-60 text-sm">
+                <div className="opacity-60 text-xs">
                   {t("blogs.blog3.description")}
                 </div>
                 <button className="mt-4 bg-primary-900 text-white px-6 py-2 rounded-full hover:bg-primary-900/80 transition-all duration-300 text-center text-sm">

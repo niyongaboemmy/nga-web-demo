@@ -72,10 +72,10 @@ const ReasonToJoin = () => {
               Why Choose Us
             </span>
           </div>
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black dark:text-white leading-tight">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-black dark:text-white leading-tight">
             Reasons to Join Our Academy
           </h2>
-          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Discover what makes us the perfect choice for your educational
             journey
           </p>
@@ -121,7 +121,7 @@ const ReasonToJoin = () => {
 
                     {/* Text Content */}
                     <div className="flex-grow flex flex-col justify-end space-y-3">
-                      <h3 className="text-2xl font-bold text-white transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-white transition-colors duration-300">
                         {reason.title}
                       </h3>
                       <p className="text-white/90 dark:text-white/95 text-sm leading-relaxed transition-colors duration-300">
@@ -150,7 +150,7 @@ const ReasonToJoin = () => {
 
         {/* CTA Button Section */}
         <div className="flex flex-col items-center justify-center space-y-4 pt-8">
-          <button className="group relative px-6 py-3 bg-primary-800 dark:bg-primary-700 text-white rounded-full font-bold text-base dark:shadow-black/50 dark:hover:shadow-primary-800/30 transition-all duration-300 hover:scale-105 overflow-hidden">
+          <button className="group relative px-6 py-3 bg-primary-800 dark:bg-primary-700 text-white rounded-full font-bold text-sm dark:shadow-black/50 dark:hover:shadow-primary-800/30 transition-all duration-300 hover:scale-105 overflow-hidden">
             {/* Button shine effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 

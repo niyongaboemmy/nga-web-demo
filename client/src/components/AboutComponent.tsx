@@ -17,18 +17,18 @@ const AboutComponent = () => {
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
                   <FiUsers className="w-8 h-8" strokeWidth={1} />
                 </div>
-                <div className="text-2xl font-bold">{t("about.whoWeAre")}</div>
+                <div className="text-xl font-semibold">{t("about.whoWeAre")}</div>
               </div>
-              <div className="opacity-60">{t("about.whoWeAreDesc")}</div>
+              <div className="opacity-60 text-sm">{t("about.whoWeAreDesc")}</div>
             </div>
             <div className="mb-12 md:mb-16">
               <div className="flex flex-row items-center gap-3 mb-2">
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
                   <FiEye className="w-8 h-8" strokeWidth={1} />
                 </div>
-                <div className="text-2xl font-bold">{t("about.vision")}</div>
+                <div className="text-xl font-semibold">{t("about.vision")}</div>
               </div>
-              <div className="opacity-60">{t("about.visionDesc")}</div>
+              <div className="opacity-60 text-sm">{t("about.visionDesc")}</div>
             </div>
           </div>
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
@@ -37,20 +37,20 @@ const AboutComponent = () => {
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
                   <FiTarget className="w-8 h-8" strokeWidth={1} />
                 </div>
-                <div className="text-2xl font-bold">{t("about.mission")}</div>
+                <div className="text-xl font-semibold">{t("about.mission")}</div>
               </div>
-              <div className="opacity-60">{t("about.missionDesc")}</div>
+              <div className="opacity-60 text-sm">{t("about.missionDesc")}</div>
             </div>
             <div className="mb-12 md:mb-16">
               <div className="flex flex-row items-center gap-3 mb-2">
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-800 to-primary-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-300">
                   <FiHeart className="w-8 h-8" strokeWidth={1} />
                 </div>
-                <div className="text-2xl font-bold">
+                <div className="text-xl font-semibold">
                   {t("about.coreValues")}
                 </div>
               </div>
-              <div className="opacity-60">
+              <div className="opacity-60 text-sm">
                 {t("about.coreValuesDesc")}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full px-2 md:px-4 py-3">
                   <div className="flex flex-row items-center gap-2">

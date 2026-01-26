@@ -76,18 +76,14 @@ const AboutPage = () => {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 dark:from-black/70 dark:via-black/60 dark:to-black/80"></div>
-        <div
-          className="absolute inset-0 opacity-20 dark:opacity-30"
-          style={{
-            backgroundImage: `
-                radial-gradient(at 20% 50%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(249, 115, 22, 0.3) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.2) 0px, transparent 50%)
-              `,
-            backgroundSize: "200% 200%",
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/70 via-gray-900/60 to-gray-900/90"></div>
+
+        {/* Floating Circles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-10 w-6 h-6 bg-white/10 rounded-full animate-float"></div>
+          <div className="absolute top-1/3 right-12 w-4 h-4 bg-blue-500/20 rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-5 h-5 bg-orange-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
+        </div>
 
         <div className="relative z-10 min-h-screen flex flex-col justify-center py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
@@ -120,6 +116,29 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Animated Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-24">
+          <svg
+            viewBox="0 0 1440 120"
+            className="w-full h-full fill-white dark:fill-gray-950"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,58.7C672,53,768,43,864,42.7C960,43,1056,53,1152,53.3C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+            />
+          </svg>
+        </div>
+
+        <style jsx>{`
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); opacity: 0.6; }
+                50% { transform: translateY(-20px); opacity: 0.2; }
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+        `}</style>
       </div>
 
       {/* Statistics Section */}
