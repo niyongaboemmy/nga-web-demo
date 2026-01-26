@@ -120,12 +120,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full ${
-        // isScrolled &&
-        !isDark
-          ? "bg-dark-700 border-none border-white/20"
-          : "bg-dark-700 dark:bg-transparent border-none border-gray-800/50"
-        } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/10 md:border-none
+        ${!isDark
+          ? "bg-gray-900/90 md:bg-transparent"
+          : "bg-gray-950/90 md:bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
