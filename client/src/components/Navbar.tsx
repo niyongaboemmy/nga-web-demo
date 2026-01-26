@@ -36,8 +36,14 @@ const Navbar = () => {
     const updateActiveLink = () => {
       if (pathname === "/about" || pathname?.startsWith("/about/")) {
         setActiveLink("about");
-      } else if (pathname === "/courses" || pathname?.startsWith("/courses/")) {
-        setActiveLink("courses");
+      } else if (pathname === "/academics" || pathname?.startsWith("/academics/")) {
+        setActiveLink("academics");
+      } else if (pathname === "/innovation" || pathname?.startsWith("/innovation/")) {
+        setActiveLink("innovation");
+      } else if (pathname === "/admissions" || pathname?.startsWith("/admissions/")) {
+        setActiveLink("admissions");
+      } else if (pathname === "/contact" || pathname?.startsWith("/contact/")) {
+        setActiveLink("contact");
       } else if (pathname === "/") {
         const hash = window.location.hash.slice(1);
         if (hash === "contact") setActiveLink("contact");
@@ -117,36 +123,38 @@ const Navbar = () => {
       className={`fixed top-0 w-full ${
         // isScrolled &&
         !isDark
-          ? "bg-dark-500 border-none border-white/20"
+          ? "bg-dark-700 border-none border-white/20"
           : "bg-dark-700 dark:bg-transparent border-none border-gray-800/50"
         } dark:from-gray-900/20 dark:to-gray-800/20 backdrop-blur-md dark:border-gray-900/0 z-50 transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Image
-              src="/apple-touch-icon.png"
-              alt="NGA-Coding Academy Logo"
-              width={50}
-              height={50}
-              className="mr-2 rounded-full transition-all duration-300 w-auto h-[46px]"
-            />
-            <div>
-              <h1 className="text-lg font-extrabold text-white dark:text-white transition-colors duration-300">
-                NGA-Coding Academy
-              </h1>
-              <div className="text-blue-100 dark:text-gray-300 text-xs opacity-70 font-normal -mt-0.5">
-                Building Rwanda’s Next Generation of Developers
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/apple-touch-icon.png"
+                alt="NGA-Coding Academy Logo"
+                width={50}
+                height={50}
+                className="mr-2 rounded-full transition-all duration-300 w-auto h-[46px]"
+              />
+              <div>
+                <h1 className="text-lg font-extrabold text-white dark:text-white transition-colors duration-300">
+                  NGA-Coding Academy
+                </h1>
+                <div className="text-blue-100 dark:text-gray-300 text-xs opacity-70 font-normal -mt-0.5">
+                  Building Rwanda’s Next Generation of Developers
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-2 text-sm">
+          <div className="hidden md:flex items-center space-x-1 text-xs bg-white/5 backdrop-blur-sm p-1.5 rounded-full border border-white/10">
             <Link
               href="/"
               onClick={() => setActiveLink("home")}
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "home"
-                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "home"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
                 }`}
             >
               {t("nav.home")}
@@ -154,29 +162,49 @@ const Navbar = () => {
             <Link
               href="/about"
               onClick={() => setActiveLink("about")}
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "about"
-                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "about"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
                 }`}
             >
               {t("nav.about")}
             </Link>
             <Link
-              href="/courses"
-              onClick={() => setActiveLink("courses")}
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "courses"
-                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+              href="/academics"
+              onClick={() => setActiveLink("academics")}
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "academics"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
                 }`}
             >
-              {t("nav.courses")}
+              {t("nav.academics")}
             </Link>
             <Link
-              href="/#contact"
+              href="/innovation"
+              onClick={() => setActiveLink("innovation")}
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "innovation"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
+                }`}
+            >
+              {t("nav.innovation")}
+            </Link>
+            <Link
+              href="/admissions"
+              onClick={() => setActiveLink("admissions")}
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "admissions"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
+                }`}
+            >
+              {t("nav.admissions")}
+            </Link>
+            <Link
+              href="/contact"
               onClick={() => setActiveLink("contact")}
-              className={`transition-all duration-300 px-4 py-2 rounded-full ${activeLink === "contact"
-                ? "bg-primary-500/10 text-white dark:text-white dark:bg-gray-100/10 backdrop-blur-md"
-                : "text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10"
+              className={`transition-all duration-300 px-4 py-1.5 rounded-full font-normal ${activeLink === "contact"
+                ? "bg-white text-black dark:bg-white dark:text-black shadow-lg"
+                : "text-gray-200 hover:text-white hover:bg-white/10"
                 }`}
             >
               {t("nav.contact")}
@@ -186,78 +214,73 @@ const Navbar = () => {
             <div className="hidden md:block relative">
               <button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center bg-primary-500/10 dark:bg-gray-100/10 text-white dark:text-gray-100 px-4 pr-6 py-2 rounded-full hover:bg-primary-500/20 dark:hover:bg-gray-100/20 transition-all duration-300 text-sm hover:scale-105"
+                className="flex items-center bg-transparent border border-white/20 text-white px-3 py-1.5 rounded-full hover:bg-white/10 transition-all duration-300 text-xs font-normal"
               >
-                <div className="font-normal opacity-80">
-                  {language === "en" ? t("nav.english") : t("nav.french")}
+                <div className="opacity-90">
+                  {language === "en" ? "EN" : "FR"}
                 </div>
                 <div>
                   <FiChevronDown
-                    className={`ml-2 transition-transform duration-300 ${isLangDropdownOpen ? "rotate-180" : ""
+                    className={`ml-1 transition-transform duration-300 ${isLangDropdownOpen ? "rotate-180" : ""
                       }`}
                   />
                 </div>
               </button>
               {isLangDropdownOpen && (
                 <div
-                  className="absolute top-full mt-1 bg-white dark:bg-gray-800/95 rounded-2xl shadow-lg border dark:border-none border-gray-200 dark:border-gray-800 z-50 transform scale-100 opacity-100 transition-all duration-200"
+                  className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 w-32 p-1 z-50 transform origin-top-right transition-all duration-200"
                   ref={langDropdownRef}
                 >
                   <button
                     onClick={() => changeLanguage("en")}
-                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-2xl transition-colors duration-200 ${language === "en"
-                      ? "bg-primary-100 dark:bg-primary-950/50"
-                      : ""
+                    className={`flex items-center justify-between w-full text-left px-3 py-2 text-xs font-medium rounded-lg transition-colors ${language === "en"
+                      ? "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                      : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
                       }`}
                   >
-                    {t("nav.english")}
-                    {language === "en" && (
-                      <div className="pl-3">
-                        <FiCheck className="text-green-500" />
-                      </div>
-                    )}
+                    English
+                    {language === "en" && <FiCheck className="text-green-500 w-3 h-3" />}
                   </button>
                   <button
                     onClick={() => changeLanguage("fr")}
-                    className={`flex items-center justify-between w-full text-left px-3 pr-6 py-2 text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-2xl transition-colors duration-200 ${language === "fr"
-                      ? "bg-primary-100 dark:bg-primary-950/50"
-                      : ""
+                    className={`flex items-center justify-between w-full text-left px-3 py-2 text-xs font-medium rounded-lg transition-colors ${language === "fr"
+                      ? "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                      : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
                       }`}
                   >
-                    {t("nav.french")}
-                    {language === "fr" && (
-                      <div className="pl-3">
-                        <FiCheck className="text-green-500" />
-                      </div>
-                    )}
+                    Français
+                    {language === "fr" && <FiCheck className="text-green-500 w-3 h-3" />}
                   </button>
                 </div>
               )}
             </div>
             <button
               onClick={toggleTheme}
-              className="hidden md:block p-2 rounded-full bg-primary-500/10 text-white dark:bg-gray-100/10 dark:text-gray-100 hover:bg-primary-500/20 dark:hover:bg-gray-100/30 hover:scale-110 hover:rotate-180 transition-all duration-300"
+              className="hidden md:flex items-center justify-center p-2 rounded-full bg-transparent border border-white/20 text-white hover:bg-white/10 transition-all duration-300"
             >
-              {isDark ? <FiSun /> : <FiMoon />}
+              {isDark ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
+              className="md:hidden p-2 rounded-full text-white hover:bg-white/10 transition-all"
             >
-              {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+              {isMobileMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
           </div>
         </div>
         <div
-          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 backdrop-blur-md border-l border-gray-200 dark:border-gray-700 shadow-lg transform ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            } transition-transform duration-300 z-50`}
+          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-2xl transform ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 ease-in-out z-50`}
           ref={mobileMenuRef}
         >
-          <div className="px-6 py-6 space-y-4 bg-white dark:bg-gray-900 w-full">
+          <div className="p-6 flex justify-between items-center border-b border-gray-100 dark:border-gray-800">
+            <span className="font-bold text-lg dark:text-white">Menu</span>
+            <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full">
+              <FiX className="w-5 h-5 dark:text-white" />
+            </button>
+          </div>
+          <div className="px-6 py-6 space-y-4">
             <div className="space-y-2">
-              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                {t("nav.navigation")}
-              </h3>
               <div className="space-y-1">
                 <Link
                   href="/"
@@ -265,9 +288,9 @@ const Navbar = () => {
                     setIsMobileMenuOpen(false);
                     setActiveLink("home");
                   }}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "home"
-                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "home"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
                   {t("nav.home")}
@@ -275,35 +298,61 @@ const Navbar = () => {
                 <Link
                   href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "about"
-                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "about"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
                   {t("nav.about")}
                 </Link>
                 <Link
-                  href="/courses"
+                  href="/academics"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    setActiveLink("courses");
+                    setActiveLink("academics");
                   }}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "courses"
-                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "academics"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
-                  {t("nav.courses")}
+                  {t("nav.academics")}
                 </Link>
                 <Link
-                  href="/#contact"
+                  href="/innovation"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setActiveLink("innovation");
+                  }}
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "innovation"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    }`}
+                >
+                  {t("nav.innovation")}
+                </Link>
+                <Link
+                  href="/admissions"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setActiveLink("admissions");
+                  }}
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "admissions"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    }`}
+                >
+                  {t("nav.admissions")}
+                </Link>
+                <Link
+                  href="/contact"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setActiveLink("contact");
                   }}
-                  className={`block transition-all duration-300 py-3 px-4 rounded-lg ${activeLink === "contact"
-                    ? "bg-primary-100 text-p5m text-black dark:text-white dark:bg-gray-800/70"
-                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className={`block transition-all duration-200 py-3 px-4 rounded-xl font-normal ${activeLink === "contact"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
                   {t("nav.contact")}

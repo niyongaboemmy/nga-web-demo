@@ -19,10 +19,12 @@ import { useTranslation } from "react-i18next";
 import Hero1Image from "../../assets/hero1.png";
 import MissionImage from "../../assets/r-image1.png";
 import VisionImage from "../../assets/r-image2.png";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ChevronDown } from "lucide-react";
 import OurPartners from "@/components/OurPartners";
+import AdsToRegister from "@/components/AdsToRegister";
+import { motion } from "framer-motion";
 
-const AboutPage = () => {
+const AboutPageContent = () => {
   const { t } = useTranslation("common");
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
@@ -76,18 +78,14 @@ const AboutPage = () => {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 dark:from-black/70 dark:via-black/60 dark:to-black/80"></div>
-        <div
-          className="absolute inset-0 opacity-20 dark:opacity-30"
-          style={{
-            backgroundImage: `
-                radial-gradient(at 20% 50%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(249, 115, 22, 0.3) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.2) 0px, transparent 50%)
-              `,
-            backgroundSize: "200% 200%",
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/70 via-gray-900/60 to-gray-900/90"></div>
+
+        {/* Floating Circles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-10 w-6 h-6 bg-white/10 rounded-full animate-float"></div>
+          <div className="absolute top-1/3 right-12 w-4 h-4 bg-blue-500/20 rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-5 h-5 bg-orange-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
+        </div>
 
         <div className="relative z-10 min-h-screen flex flex-col justify-center py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
@@ -119,7 +117,31 @@ const AboutPage = () => {
               </Link>
             </div>
           </div>
+
         </div>
+
+        {/* Animated Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 h-16 md:h-16">
+          <svg
+            viewBox="0 0 1440 100"
+            className="w-full h-full fill-white dark:fill-gray-950"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,58.7C672,53,768,43,864,42.7C960,43,1056,53,1152,53.3C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+            />
+          </svg>
+        </div>
+
+        <style jsx>{`
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); opacity: 0.6; }
+                50% { transform: translateY(-20px); opacity: 0.2; }
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+        `}</style>
       </div>
 
       {/* Statistics Section */}
@@ -335,37 +357,19 @@ const AboutPage = () => {
         <OurPartners />
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary-500 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">
-            {t("aboutPage.cta.title")}
-          </h2>
-          <p className="text-primary-100 text-xl mb-10 leading-relaxed">
-            {t("aboutPage.cta.description")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/register"
-              className="px-10 py-4 bg-white text-primary-900 font-bold rounded-full shadow-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300"
-            >
-              {t("aboutPage.cta.apply")}
-            </Link>
-            <Link
-              href="/contact"
-              className="px-10 py-4 bg-transparent border-2 border-primary-400 text-white font-bold rounded-full hover:bg-primary-800 transition-all duration-300"
-            >
-              {t("aboutPage.cta.contact")}
-            </Link>
-          </div>
-        </div>
+      {/* Ads to Register Section */}
+      <section>
+        <AdsToRegister />
       </section>
     </div>
+  );
+};
+
+const AboutPage = () => {
+  return (
+    <React.Suspense fallback={null}>
+      <AboutPageContent />
+    </React.Suspense>
   );
 };
 

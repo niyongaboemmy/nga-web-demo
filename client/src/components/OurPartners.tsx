@@ -18,7 +18,7 @@ const OurPartners = () => {
     <div className="bg-white dark:bg-gray-950 py-12 md:py-16 lg:py-20 text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-max">
         <div className="mb-12">
-          <h1 className="text-xl md:text-2xl font-bold text-center">
+          <h1 className="text-lg md:text-xl font-semibold text-center">
             {t("partners.title")}
           </h1>
         </div>

@@ -8,6 +8,7 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import AOSInit from "@/components/AOSInit";
 import { ThemeProvider } from "@/context/ThemeContext";
 import I18nProvider from "@/components/I18nProvider";
+import Preloader from "@/components/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ngacoding.com"),
   title: "NGA-Coding Academy",
   description:
     "Rwanda’s Private Centre of Excellence in Software Programming, Embedded Systems & Robotics",
@@ -49,6 +51,7 @@ export default function RootLayout({
       >
         <I18nProvider>
           <ThemeProvider>
+            <Preloader />
             <AOSInit />
             <BackgroundVideo />
             <Navbar />

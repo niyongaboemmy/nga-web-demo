@@ -1,15 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Hero1Image from "../../assets/hero1.png";
+import CourseModal from "../../components/CourseModal";
+
+interface Course {
+    title: string;
+    code: string;
+    desc: string;
+    duration: string;
+    level: string;
+    modules: number;
+    labs: number;
+    tags: string[];
+}
 
 const CoursesPage = () => {
     const { t } = useTranslation("common");
+    const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (course: Course) => {
+        setSelectedCourse(course);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        // Optional: clear selected course after animation if needed, but keeping it usually looks better during exit
+    };
 
     const categories = [
         {
@@ -18,12 +42,66 @@ const CoursesPage = () => {
             description: t("courses.categories.software.description"),
             color: "from-blue-600 to-indigo-600",
             courses: [
-                { title: t("courses.list.se101.title"), code: "SE-101", desc: t("courses.list.se101.desc") },
-                { title: t("courses.list.se102.title"), code: "SE-102", desc: t("courses.list.se102.desc") },
-                { title: t("courses.list.cs101.title"), code: "CS-101", desc: t("courses.list.cs101.desc") },
-                { title: t("courses.list.db101.title"), code: "DB-101", desc: t("courses.list.db101.desc") },
-                { title: t("courses.list.ui101.title"), code: "UI-101", desc: t("courses.list.ui101.desc") },
-                { title: t("courses.list.ux101.title"), code: "UX-101", desc: t("courses.list.ux101.desc") },
+                {
+                    title: t("courses.list.se101.title"),
+                    code: "SE-101",
+                    desc: t("courses.list.se101.desc"),
+                    duration: "12 Weeks",
+                    level: "Beginner",
+                    modules: 6,
+                    labs: 12,
+                    tags: ["Development", "Fundamentals", "Logic"],
+                },
+                {
+                    title: t("courses.list.se102.title"),
+                    code: "SE-102",
+                    desc: t("courses.list.se102.desc"),
+                    duration: "14 Weeks",
+                    level: "Intermediate",
+                    modules: 8,
+                    labs: 15,
+                    tags: ["Algorithms", "Data Structures", "Optimization"],
+                },
+                {
+                    title: t("courses.list.cs101.title"),
+                    code: "CS-101",
+                    desc: t("courses.list.cs101.desc"),
+                    duration: "10 Weeks",
+                    level: "Beginner",
+                    modules: 5,
+                    labs: 8,
+                    tags: ["Computer Science", "Theory", "Hardware"],
+                },
+                {
+                    title: t("courses.list.db101.title"),
+                    code: "DB-101",
+                    desc: t("courses.list.db101.desc"),
+                    duration: "12 Weeks",
+                    level: "Intermediate",
+                    modules: 7,
+                    labs: 10,
+                    tags: ["SQL", "Database Design", "Backend"],
+                },
+                {
+                    title: t("courses.list.ui101.title"),
+                    code: "UI-101",
+                    desc: t("courses.list.ui101.desc"),
+                    duration: "8 Weeks",
+                    level: "Beginner",
+                    modules: 4,
+                    labs: 8,
+                    tags: ["Design", "Figma", "Prototyping"],
+                },
+                {
+                    title: t("courses.list.ux101.title"),
+                    code: "UX-101",
+                    desc: t("courses.list.ux101.desc"),
+                    duration: "10 Weeks",
+                    level: "Intermediate",
+                    modules: 6,
+                    labs: 8,
+                    tags: ["User Research", "Wireframing", "Testing"],
+                },
             ]
         },
         {
@@ -32,9 +110,36 @@ const CoursesPage = () => {
             description: t("courses.categories.hardware.description"),
             color: "from-orange-500 to-red-600",
             courses: [
-                { title: t("courses.list.es201.title"), code: "ES-201", desc: t("courses.list.es201.desc") },
-                { title: t("courses.list.ee201.title"), code: "EE-201", desc: t("courses.list.ee201.desc") },
-                { title: t("courses.list.nw201.title"), code: "NW-201", desc: t("courses.list.nw201.desc") },
+                {
+                    title: t("courses.list.es201.title"),
+                    code: "ES-201",
+                    desc: t("courses.list.es201.desc"),
+                    duration: "16 Weeks",
+                    level: "Advanced",
+                    modules: 10,
+                    labs: 20,
+                    tags: ["Embedded Systems", "C++", "Microcontrollers"],
+                },
+                {
+                    title: t("courses.list.ee201.title"),
+                    code: "EE-201",
+                    desc: t("courses.list.ee201.desc"),
+                    duration: "14 Weeks",
+                    level: "Intermediate",
+                    modules: 8,
+                    labs: 16,
+                    tags: ["Circuits", "Electronics", "Physics"],
+                },
+                {
+                    title: t("courses.list.nw201.title"),
+                    code: "NW-201",
+                    desc: t("courses.list.nw201.desc"),
+                    duration: "12 Weeks",
+                    level: "Intermediate",
+                    modules: 7,
+                    labs: 12,
+                    tags: ["Networking", "Protocols", "Security"],
+                },
             ]
         },
         {
@@ -43,11 +148,56 @@ const CoursesPage = () => {
             description: t("courses.categories.core.description"),
             color: "from-emerald-500 to-teal-600",
             courses: [
-                { title: t("courses.list.bus101.title"), code: "BUS-101", desc: t("courses.list.bus101.desc") },
-                { title: t("courses.list.eng101.title"), code: "ENG-101", desc: t("courses.list.eng101.desc") },
-                { title: t("courses.list.mat101.title"), code: "MAT-101", desc: t("courses.list.mat101.desc") },
-                { title: t("courses.list.eth101.title"), code: "ETH-101", desc: t("courses.list.eth101.desc") },
-                { title: t("courses.list.lan101.title"), code: "LAN-101", desc: t("courses.list.lan101.desc") },
+                {
+                    title: t("courses.list.bus101.title"),
+                    code: "BUS-101",
+                    desc: t("courses.list.bus101.desc"),
+                    duration: "8 Weeks",
+                    level: "Beginner",
+                    modules: 4,
+                    labs: 4,
+                    tags: ["Business", "Management", "Strategy"],
+                },
+                {
+                    title: t("courses.list.eng101.title"),
+                    code: "ENG-101",
+                    desc: t("courses.list.eng101.desc"),
+                    duration: "8 Weeks",
+                    level: "Beginner",
+                    modules: 6,
+                    labs: 8,
+                    tags: ["Communication", "Writing", "Professional"],
+                },
+                {
+                    title: t("courses.list.mat101.title"),
+                    code: "MAT-101",
+                    desc: t("courses.list.mat101.desc"),
+                    duration: "12 Weeks",
+                    level: "Intermediate",
+                    modules: 8,
+                    labs: 16,
+                    tags: ["Mathematics", "Calculus", "Logic"],
+                },
+                {
+                    title: t("courses.list.eth101.title"),
+                    code: "ETH-101",
+                    desc: t("courses.list.eth101.desc"),
+                    duration: "6 Weeks",
+                    level: "Beginner",
+                    modules: 3,
+                    labs: 2,
+                    tags: ["Ethics", "Philosophy", "Technology"],
+                },
+                {
+                    title: t("courses.list.lan101.title"),
+                    code: "LAN-101",
+                    desc: t("courses.list.lan101.desc"),
+                    duration: "10 Weeks",
+                    level: "Beginner",
+                    modules: 5,
+                    labs: 10,
+                    tags: ["Languages", "Culture", "Communication"],
+                },
             ]
         }
     ];
@@ -146,7 +296,8 @@ const CoursesPage = () => {
                                             return (
                                                 <div
                                                     key={cIdx}
-                                                    className={`group relative bg-white dark:bg-gray-900/40 backdrop-blur-xl border border-gray-200 dark:border-gray-800 p-8 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500 ${isFeature ? 'md:col-span-2 bg-gray-50 dark:bg-gray-800/20' : ''}`}
+                                                    onClick={() => openModal(course)}
+                                                    className={`group relative bg-white dark:bg-gray-900/40 backdrop-blur-xl border border-gray-200 dark:border-gray-800 p-8 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500 cursor-pointer ${isFeature ? 'md:col-span-2 bg-gray-50 dark:bg-gray-800/20' : ''}`}
                                                     data-aos="fade-up"
                                                     data-aos-delay={cIdx * 50}
                                                 >
@@ -196,6 +347,12 @@ const CoursesPage = () => {
                     </Link>
                 </div>
             </section>
+
+            <CourseModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                course={selectedCourse}
+            />
         </div>
     );
 };
